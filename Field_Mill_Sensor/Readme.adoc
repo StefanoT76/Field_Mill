@@ -1,0 +1,32 @@
+:Author: stefano_trentini
+:Email: {AuthorEmail}
+:Date: 26/03/2024
+:Revision: SW 0.9.6  HW V0.2 (new motor)
+:License: Public Domain
+
+IDE configuration: STM32 MCU Based Boards, generic STM32F1 series, BulePill F103CB or C8 with 128k, Upload with SWD, 
+CDC generic serial, USART enebled (to configure the second HW serial)
+
+
+
+/**
+ * prototype of a reasonable made field mill
+ * Please DO NOT DISTRIBUTE it, because at this date it is in a pre-alpha version and it needs lots of reworking/cleaning
+ *
+ * 
+ *
+ *     
+ * = = = = = = = = = = = = = = = = = =
+ *
+ * Scheduler lets you to do 10 different tasks in 1 second. Every task have 1/10s of time to complete without disrupting other operations
+ * Every task is executed only once for second!!!
+ *
+ * ------------------------------------------------------------------------------
+ *
+ * Copyright (c) 2023 - Stefano Trentini: please DO NOT REDISTRIBUTE!!!
+ *
+ **/
+
+
+IDE configuration: STM32 MCU Based Boards, generic STM32F1 series, BulePill F103CB or C8 with 128k, Upload with SWD, 
+CDC generic serial, USART enebled (to configure the second HW serial)
