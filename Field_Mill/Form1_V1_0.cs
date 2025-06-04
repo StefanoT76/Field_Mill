@@ -774,7 +774,7 @@ namespace Field_Mill
                         chart1.Series["INS"].Points.AddXY(timeX, value3);
                         chart1.Series["SENS"].Points.AddXY(timeX, value5);
 
-                        // Scroll X axis to always show last 15 or 5 minutes
+                        // Scroll X axis to always show last 60 or 15 or 5 minutes
                         double viewSize = TimeSpan.FromMinutes(timeWindowMinutes).TotalDays;
                         double minTime = timeX - viewSize;
                         
