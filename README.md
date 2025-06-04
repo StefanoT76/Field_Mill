@@ -1,57 +1,57 @@
-Author: StefanoT
-Email: {AuthorEmail}
-Date: 26/03/2024
-Revision: SW 0.9.6  HW V0.2 (new motor)
+Author: StefanoT  
+Email: {AuthorEmail}  
+Date: 26/03/2024  
+Revision: SW 0.9.6  HW V0.2 (new motor)  
 
 
-IDE configuration: STM32 MCU Based Boards, generic STM32F1 series, BulePill F103CB or C8 with 128k, Upload with SWD, 
-CDC generic serial, USART enebled (to configure the second HW serial)
+IDE configuration: STM32 MCU Based Boards, generic STM32F1 series, BulePill F103CB or C8 with 128k, Upload with SWD,   
+CDC generic serial, USART enebled (to configure the second HW serial)  
 
-Prototype of a reasonable made field mill
+Prototype of a reasonable made field mill  
+  
+  
+  
+Master SW for Windows 10 Modpoll Modbus Master Simulator  
+
+With RS485 module TX and RX are swapped on bluepill side  
+
+Commands:  
+
+cd C:\Users\stefano.trentini\Documents\Field_Mill\Modbus_DRIVER  
+
+READING  
+
+modpoll -b 19200 -p even -m rtu -a 1 -r 1 -c 16 COM12     // read 16 registers of 16bit each  
+modpoll -b 19200 -p even -m rtu -a 1 -t3:float -r 4 -c 2 COM12  // read Field output float starting at address 4  
+modpoll -b 19200 -p even -m rtu -a 1 -t3:int -r 8  -c 1 COM12   // read internal T  
+modpoll -b 19200 -p even -m rtu -a 1 -t3:hex -r 11  -c 1 COM12  // read zero adc count  
+modpoll -b 19200 -p even -m rtu -a 1 -t3:hex -r 10  -c 1 -1 COM12  //Read internal status  
 
 
+WRITING  
 
-Master SW for Windows 10 Modpoll Modbus Master Simulator
+modpoll -b 19200 -p even -m rtu -a 1 -t4:float -r 14 -1 COM12 2000.0  //write calibration data for sensitive channel  
+modpoll -b 19200 -p even -m rtu -a 1 -t4:float -r 16 -1 COM12 0.0  //write offset data for sensitive channel  
+modpoll -b 19200 -p even -m rtu -a 1 -t4:float -r 2 -1 COM12 20000.0  //write calibration data for insensitive channel  
+modpoll -b 19200 -p even -m rtu -a 1 -t4:float -r 18 -1 COM12 0.0  //write offset data for insensitive channel  
+modpoll -b 19200 -p even -m rtu -a 1 -1 -t4:float -r 14 -c 1 100.00 COM12  // write one float starting at address 14  
+modpoll -b 19200 -p even -m rtu -a 1 -1 -t4:hex -r 10 -c 1 0x0000 COM12  // write 16 bit starting at address 10  
+modpoll -b 19200 -p even -m rtu -a 1 -t4:hex -r 10  -c 1 -1 COM12 0x0000  //stop motor  
+modpoll -b 19200 -p even -m rtu -a 1 -t4:hex -r 10  -c 1 -1 COM12 0x0002  //start motor or disable heater or clear plates  
+modpoll -b 19200 -p even -m rtu -a 1 -t4:hex -r 10  -c 1 -1 COM12 0x0006  //enable heater  
+modpoll -b 19200 -p even -m rtu -a 1 -t4:hex -r 10  -c 1 -1 COM12 0x0003  // short plates and leave motor running  
+modpoll -b 19200 -p even -m rtu -a 1 -t4:hex -r 10  -c 1 -1 COM12 0x0001 // short plates  
+modpoll -b 19200 -p even -m rtu -a 1 -t4:hex -r 10  -c 1 -1 COM12 0x000A // write EEPROM  0000 0000 0000 1010 binary  
 
-With RS485 module TX and RX are swapped on bluepill side
+au16data[9]   stucture:  
 
-Commands:
+15  14  13  12  11  10   9   8   7   6   5   4   3   2   1   0      bit  
 
-cd C:\Users\stefano.trentini\Documents\Field_Mill\Modbus_DRIVER
+0    0   0   0   0   0  O1  O0   0   0   0   0   W   H   R   P      function  
 
-READING
-
-modpoll -b 19200 -p even -m rtu -a 1 -r 1 -c 16 COM12     // read 16 registers of 16bit each
-modpoll -b 19200 -p even -m rtu -a 1 -t3:float -r 4 -c 2 COM12  // read Field output float starting at address 4
-modpoll -b 19200 -p even -m rtu -a 1 -t3:int -r 8  -c 1 COM12   // read internal T
-modpoll -b 19200 -p even -m rtu -a 1 -t3:hex -r 11  -c 1 COM12  // read zero adc count
-modpoll -b 19200 -p even -m rtu -a 1 -t3:hex -r 10  -c 1 -1 COM12  //Read internal status
-
-
-WRITING
-
-modpoll -b 19200 -p even -m rtu -a 1 -t4:float -r 14 -1 COM12 2000.0  //write calibration data for sensitive channel
-modpoll -b 19200 -p even -m rtu -a 1 -t4:float -r 16 -1 COM12 0.0  //write offset data for sensitive channel
-modpoll -b 19200 -p even -m rtu -a 1 -t4:float -r 2 -1 COM12 20000.0  //write calibration data for insensitive channel
-modpoll -b 19200 -p even -m rtu -a 1 -t4:float -r 18 -1 COM12 0.0  //write offset data for insensitive channel
-modpoll -b 19200 -p even -m rtu -a 1 -1 -t4:float -r 14 -c 1 100.00 COM12  // write one float starting at address 14
-modpoll -b 19200 -p even -m rtu -a 1 -1 -t4:hex -r 10 -c 1 0x0000 COM12  // write 16 bit starting at address 10
-modpoll -b 19200 -p even -m rtu -a 1 -t4:hex -r 10  -c 1 -1 COM12 0x0000  //stop motor
-modpoll -b 19200 -p even -m rtu -a 1 -t4:hex -r 10  -c 1 -1 COM12 0x0002  //start motor or disable heater or clear plates
-modpoll -b 19200 -p even -m rtu -a 1 -t4:hex -r 10  -c 1 -1 COM12 0x0006  //enable heater
-modpoll -b 19200 -p even -m rtu -a 1 -t4:hex -r 10  -c 1 -1 COM12 0x0003  // short plates and leave motor running
-modpoll -b 19200 -p even -m rtu -a 1 -t4:hex -r 10  -c 1 -1 COM12 0x0001 // short plates
-modpoll -b 19200 -p even -m rtu -a 1 -t4:hex -r 10  -c 1 -1 COM12 0x000A // write EEPROM  0000 0000 0000 1010 binary
-
-au16data[9]   stucture:
-
-15  14  13  12  11  10   9   8   7   6   5   4   3   2   1   0      bit
-
-0    0   0   0   0   0  O1  O0   0   0   0   0   W   H   R   P      function
-
-O1 --> overflow sensitive
-O0 --> overflow insensitive
-P  --> Short (1) - clear (0) plates
-R  --> Start (1) - Stop (0) motor
-H  --> Enable (1) - Disable (0) heater
-W  --> write EEPROM
+O1 --> overflow sensitive  
+O0 --> overflow insensitive  
+P  --> Short (1) - clear (0) plates  
+R  --> Start (1) - Stop (0) motor  
+H  --> Enable (1) - Disable (0) heater  
+W  --> write EEPROM  
