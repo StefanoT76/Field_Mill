@@ -1,0 +1,18 @@
+
+Calibrazione Field Mill
+
+1)	Accendere alimentatori, pc, e field mill 10 minuti prima di iniziare la calibrazione
+2)	Predisporre la dima di calibrazione e collegare il field mill a terra
+3)	Riportare i valori di gain e offset a 3000 e 0 per il canale sensitive e a 10000 e 0 per il canale insensitive.
+4)	Applicare 40V alla dima di calibrazione e leggere il valore medio sul grafico (Sensitve CH)
+5)	Applicare 200V alla dima di calibrazione e leggere il valore medio sul grafico  (Insensitive CH)
+6)	Applicare 5000V alla dima di calibrazione e leggere il valore medio sul grafico (Sensitive CH)
+7)	Applicare 10000V alla dima di calibrazione e leggere il valore medio sul grafico  (Insensitive CH)
+8)	Attenzione all’overshoot, ci vuole un po' perché la lettura si stabilizzi.
+9)	Riportare i valori letti nella matrice di calibrazione
+10)	Caricare i valori calcolati di gain e offset nel filed mill
+11)	Applicare 20V alla dima di calibrazione e leggere il valore medio sul grafico dovrebbe leggere 100 V/m
+12)	Applicare 200V alla dima di calibrazione e leggere il valore medio sul grafico dovrebbe leggere 1000 V/m
+13)	Applicare 5000V alla dima di calibrazione e leggere il valore medio sul grafico dovrebbe leggere 25000 V/m
+14)	Applicare 10000V alla dima di calibrazione e leggere il valore medio sul grafico dovrebbe leggere 50000 V/m
+15)	Salvare
