@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Start = new System.Windows.Forms.Button();
             this.Stop = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -132,9 +132,10 @@
             // 
             // Start
             // 
-            this.Start.Location = new System.Drawing.Point(70, 23);
+            this.Start.Location = new System.Drawing.Point(47, 15);
+            this.Start.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(121, 37);
+            this.Start.Size = new System.Drawing.Size(81, 24);
             this.Start.TabIndex = 0;
             this.Start.Text = "Start";
             this.Start.UseVisualStyleBackColor = true;
@@ -142,9 +143,10 @@
             // 
             // Stop
             // 
-            this.Stop.Location = new System.Drawing.Point(197, 23);
+            this.Stop.Location = new System.Drawing.Point(131, 15);
+            this.Stop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Stop.Name = "Stop";
-            this.Stop.Size = new System.Drawing.Size(121, 37);
+            this.Stop.Size = new System.Drawing.Size(81, 24);
             this.Stop.TabIndex = 1;
             this.Stop.Text = "Stop";
             this.Stop.UseVisualStyleBackColor = true;
@@ -152,9 +154,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(197, 74);
+            this.button1.Location = new System.Drawing.Point(131, 48);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 37);
+            this.button1.Size = new System.Drawing.Size(81, 24);
             this.button1.TabIndex = 3;
             this.button1.Text = "Stop";
             this.button1.UseVisualStyleBackColor = true;
@@ -162,9 +165,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(70, 73);
+            this.button2.Location = new System.Drawing.Point(47, 47);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 37);
+            this.button2.Size = new System.Drawing.Size(81, 24);
             this.button2.TabIndex = 2;
             this.button2.Text = "Start";
             this.button2.UseVisualStyleBackColor = true;
@@ -173,27 +177,31 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 31);
+            this.label1.Location = new System.Drawing.Point(11, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 20);
+            this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Coil 4";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 81);
+            this.label2.Location = new System.Drawing.Point(11, 53);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 20);
+            this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Coil 5";
             // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.Location = new System.Drawing.Point(309, 600);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(206, 390);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(59, 40);
+            this.button3.Size = new System.Drawing.Size(39, 26);
             this.button3.TabIndex = 7;
             this.button3.Text = "Read";
             this.button3.UseVisualStyleBackColor = true;
@@ -203,27 +211,30 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(226, 610);
+            this.label3.Location = new System.Drawing.Point(151, 396);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 20);
+            this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "Rotor Hz";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(326, 31);
+            this.label4.Location = new System.Drawing.Point(217, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(18, 20);
+            this.label4.Size = new System.Drawing.Size(13, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = ">";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(326, 81);
+            this.label5.Location = new System.Drawing.Point(217, 53);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(18, 20);
+            this.label5.Size = new System.Drawing.Size(13, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = ">";
             // 
@@ -231,26 +242,30 @@
             // 
             this.labelReg0.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelReg0.AutoSize = true;
-            this.labelReg0.Location = new System.Drawing.Point(374, 610);
+            this.labelReg0.Location = new System.Drawing.Point(249, 396);
+            this.labelReg0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReg0.Name = "labelReg0";
-            this.labelReg0.Size = new System.Drawing.Size(18, 20);
+            this.labelReg0.Size = new System.Drawing.Size(13, 13);
             this.labelReg0.TabIndex = 11;
             this.labelReg0.Text = "0";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(193, 165);
+            this.label7.Location = new System.Drawing.Point(129, 107);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 20);
+            this.label7.Size = new System.Drawing.Size(47, 13);
             this.label7.TabIndex = 12;
             this.label7.Text = "Ins. CAL";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(269, 160);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(179, 104);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(59, 33);
+            this.button4.Size = new System.Drawing.Size(39, 21);
             this.button4.TabIndex = 13;
             this.button4.Text = "Read";
             this.button4.UseVisualStyleBackColor = true;
@@ -259,9 +274,10 @@
             // labelReg1
             // 
             this.labelReg1.AutoSize = true;
-            this.labelReg1.Location = new System.Drawing.Point(334, 165);
+            this.labelReg1.Location = new System.Drawing.Point(223, 107);
+            this.labelReg1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReg1.Name = "labelReg1";
-            this.labelReg1.Size = new System.Drawing.Size(18, 20);
+            this.labelReg1.Size = new System.Drawing.Size(13, 13);
             this.labelReg1.TabIndex = 14;
             this.labelReg1.Text = "0";
             // 
@@ -270,18 +286,21 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1217, 134);
+            this.label9.Location = new System.Drawing.Point(811, 87);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(105, 20);
+            this.label9.Size = new System.Drawing.Size(76, 13);
             this.label9.TabIndex = 15;
             this.label9.Text = "Ins. CH V/m";
             // 
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Location = new System.Drawing.Point(1240, 207);
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(827, 135);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(59, 40);
+            this.button5.Size = new System.Drawing.Size(39, 26);
             this.button5.TabIndex = 16;
             this.button5.Text = "Read";
             this.button5.UseVisualStyleBackColor = true;
@@ -294,9 +313,10 @@
             this.labelReg3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelReg3.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelReg3.ForeColor = System.Drawing.Color.LimeGreen;
-            this.labelReg3.Location = new System.Drawing.Point(1196, 154);
+            this.labelReg3.Location = new System.Drawing.Point(797, 100);
+            this.labelReg3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReg3.Name = "labelReg3";
-            this.labelReg3.Size = new System.Drawing.Size(150, 50);
+            this.labelReg3.Size = new System.Drawing.Size(100, 32);
             this.labelReg3.TabIndex = 17;
             this.labelReg3.Text = "0";
             this.labelReg3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -306,18 +326,21 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(1217, 332);
+            this.label11.Location = new System.Drawing.Point(811, 216);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(112, 20);
+            this.label11.Size = new System.Drawing.Size(81, 13);
             this.label11.TabIndex = 18;
             this.label11.Text = "Sen. CH V/m";
             // 
             // button6
             // 
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Location = new System.Drawing.Point(1240, 405);
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(827, 263);
+            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(59, 40);
+            this.button6.Size = new System.Drawing.Size(39, 26);
             this.button6.TabIndex = 19;
             this.button6.Text = "Read";
             this.button6.UseVisualStyleBackColor = true;
@@ -330,9 +353,10 @@
             this.labelReg5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelReg5.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelReg5.ForeColor = System.Drawing.Color.LimeGreen;
-            this.labelReg5.Location = new System.Drawing.Point(1196, 352);
+            this.labelReg5.Location = new System.Drawing.Point(797, 229);
+            this.labelReg5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReg5.Name = "labelReg5";
-            this.labelReg5.Size = new System.Drawing.Size(150, 50);
+            this.labelReg5.Size = new System.Drawing.Size(100, 32);
             this.labelReg5.TabIndex = 20;
             this.labelReg5.Text = "0";
             this.labelReg5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -340,9 +364,11 @@
             // button7
             // 
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button7.Location = new System.Drawing.Point(309, 646);
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(206, 420);
+            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(59, 40);
+            this.button7.Size = new System.Drawing.Size(39, 26);
             this.button7.TabIndex = 21;
             this.button7.Text = "Read";
             this.button7.UseVisualStyleBackColor = true;
@@ -352,9 +378,10 @@
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(200, 656);
+            this.label13.Location = new System.Drawing.Point(133, 426);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(99, 20);
+            this.label13.Size = new System.Drawing.Size(69, 13);
             this.label13.TabIndex = 22;
             this.label13.Text = "Int. TEMP °C";
             // 
@@ -362,18 +389,21 @@
             // 
             this.labelReg7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelReg7.AutoSize = true;
-            this.labelReg7.Location = new System.Drawing.Point(374, 656);
+            this.labelReg7.Location = new System.Drawing.Point(249, 426);
+            this.labelReg7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReg7.Name = "labelReg7";
-            this.labelReg7.Size = new System.Drawing.Size(18, 20);
+            this.labelReg7.Size = new System.Drawing.Size(13, 13);
             this.labelReg7.TabIndex = 23;
             this.labelReg7.Text = "0";
             // 
             // button8
             // 
             this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button8.Location = new System.Drawing.Point(121, 600);
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(81, 390);
+            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(40, 40);
+            this.button8.Size = new System.Drawing.Size(27, 26);
             this.button8.TabIndex = 30;
             this.button8.Text = "Off";
             this.button8.UseVisualStyleBackColor = true;
@@ -382,9 +412,10 @@
             // 
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(27, 610);
+            this.label15.Location = new System.Drawing.Point(18, 396);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(88, 20);
+            this.label15.Size = new System.Drawing.Size(59, 13);
             this.label15.TabIndex = 33;
             this.label15.Text = "Plate Short";
             // 
@@ -392,18 +423,21 @@
             // 
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(243, 702);
+            this.label16.Location = new System.Drawing.Point(162, 456);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(56, 20);
+            this.label16.Size = new System.Drawing.Size(37, 13);
             this.label16.TabIndex = 34;
             this.label16.Text = "Status";
             // 
             // button9
             // 
             this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button9.Location = new System.Drawing.Point(309, 692);
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(206, 450);
+            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(59, 40);
+            this.button9.Size = new System.Drawing.Size(39, 26);
             this.button9.TabIndex = 35;
             this.button9.Text = "Read";
             this.button9.UseVisualStyleBackColor = true;
@@ -413,18 +447,21 @@
             // 
             this.labelReg9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelReg9.AutoSize = true;
-            this.labelReg9.Location = new System.Drawing.Point(374, 702);
+            this.labelReg9.Location = new System.Drawing.Point(249, 456);
+            this.labelReg9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReg9.Name = "labelReg9";
-            this.labelReg9.Size = new System.Drawing.Size(153, 20);
+            this.labelReg9.Size = new System.Drawing.Size(103, 13);
             this.labelReg9.TabIndex = 36;
             this.labelReg9.Text = "0000000000000000";
             // 
             // button10
             // 
             this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button10.Location = new System.Drawing.Point(121, 646);
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(81, 420);
+            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(40, 40);
+            this.button10.Size = new System.Drawing.Size(27, 26);
             this.button10.TabIndex = 37;
             this.button10.Text = "Off";
             this.button10.UseVisualStyleBackColor = true;
@@ -433,18 +470,21 @@
             // 
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(65, 656);
+            this.label18.Location = new System.Drawing.Point(43, 426);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(50, 20);
+            this.label18.Size = new System.Drawing.Size(34, 13);
             this.label18.TabIndex = 38;
             this.label18.Text = "Motor";
             // 
             // button11
             // 
             this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button11.Location = new System.Drawing.Point(121, 692);
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(81, 450);
+            this.button11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(40, 40);
+            this.button11.Size = new System.Drawing.Size(27, 26);
             this.button11.TabIndex = 39;
             this.button11.Text = "Off";
             this.button11.UseVisualStyleBackColor = true;
@@ -453,18 +493,21 @@
             // 
             this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(57, 702);
+            this.label19.Location = new System.Drawing.Point(38, 456);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(58, 20);
+            this.label19.Size = new System.Drawing.Size(39, 13);
             this.label19.TabIndex = 40;
             this.label19.Text = "Heater";
             // 
             // button12
             // 
             this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button12.Location = new System.Drawing.Point(121, 738);
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Location = new System.Drawing.Point(81, 480);
+            this.button12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(40, 40);
+            this.button12.Size = new System.Drawing.Size(27, 26);
             this.button12.TabIndex = 41;
             this.button12.Text = "Off";
             this.button12.UseVisualStyleBackColor = true;
@@ -473,18 +516,21 @@
             // 
             this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(4, 748);
+            this.label20.Location = new System.Drawing.Point(3, 486);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(109, 20);
+            this.label20.Size = new System.Drawing.Size(75, 13);
             this.label20.TabIndex = 42;
             this.label20.Text = "EEPROM WR";
             // 
             // button13
             // 
             this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button13.Location = new System.Drawing.Point(121, 784);
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(81, 510);
+            this.button13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(40, 40);
+            this.button13.Size = new System.Drawing.Size(27, 26);
             this.button13.TabIndex = 43;
             this.button13.Text = "No";
             this.button13.UseVisualStyleBackColor = true;
@@ -493,18 +539,21 @@
             // 
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(19, 794);
+            this.label21.Location = new System.Drawing.Point(13, 516);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(99, 20);
+            this.label21.Size = new System.Drawing.Size(66, 13);
             this.label21.TabIndex = 44;
             this.label21.Text = "Ins. CH OVF";
             // 
             // button14
             // 
             this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button14.Location = new System.Drawing.Point(121, 834);
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Location = new System.Drawing.Point(81, 542);
+            this.button14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(40, 40);
+            this.button14.Size = new System.Drawing.Size(27, 26);
             this.button14.TabIndex = 45;
             this.button14.Text = "No";
             this.button14.UseVisualStyleBackColor = true;
@@ -513,17 +562,20 @@
             // 
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(12, 844);
+            this.label22.Location = new System.Drawing.Point(8, 549);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(106, 20);
+            this.label22.Size = new System.Drawing.Size(71, 13);
             this.label22.TabIndex = 46;
             this.label22.Text = "Sen. CH OVF";
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(94, 122);
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.Location = new System.Drawing.Point(63, 79);
+            this.button15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(59, 33);
+            this.button15.Size = new System.Drawing.Size(39, 21);
             this.button15.TabIndex = 47;
             this.button15.Text = "Read";
             this.button15.UseVisualStyleBackColor = true;
@@ -532,44 +584,50 @@
             // labelReg10
             // 
             this.labelReg10.AutoSize = true;
-            this.labelReg10.Location = new System.Drawing.Point(159, 129);
+            this.labelReg10.Location = new System.Drawing.Point(106, 84);
+            this.labelReg10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReg10.Name = "labelReg10";
-            this.labelReg10.Size = new System.Drawing.Size(18, 20);
+            this.labelReg10.Size = new System.Drawing.Size(13, 13);
             this.labelReg10.TabIndex = 48;
             this.labelReg10.Text = "0";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(13, 167);
+            this.label24.Location = new System.Drawing.Point(9, 109);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(79, 20);
+            this.label24.Size = new System.Drawing.Size(54, 13);
             this.label24.TabIndex = 49;
             this.label24.Text = "Zero Sen.";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(16, 129);
+            this.label25.Location = new System.Drawing.Point(11, 84);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(72, 20);
+            this.label25.Size = new System.Drawing.Size(49, 13);
             this.label25.TabIndex = 52;
             this.label25.Text = "Zero Ins.";
             // 
             // labelReg11
             // 
             this.labelReg11.AutoSize = true;
-            this.labelReg11.Location = new System.Drawing.Point(159, 166);
+            this.labelReg11.Location = new System.Drawing.Point(106, 108);
+            this.labelReg11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReg11.Name = "labelReg11";
-            this.labelReg11.Size = new System.Drawing.Size(18, 20);
+            this.labelReg11.Size = new System.Drawing.Size(13, 13);
             this.labelReg11.TabIndex = 51;
             this.labelReg11.Text = "0";
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(94, 161);
+            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.Location = new System.Drawing.Point(63, 105);
+            this.button16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(59, 33);
+            this.button16.Size = new System.Drawing.Size(39, 21);
             this.button16.TabIndex = 50;
             this.button16.Text = "Read";
             this.button16.UseVisualStyleBackColor = true;
@@ -579,18 +637,21 @@
             // 
             this.labelReg12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelReg12.AutoSize = true;
-            this.labelReg12.Location = new System.Drawing.Point(374, 793);
+            this.labelReg12.Location = new System.Drawing.Point(249, 515);
+            this.labelReg12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReg12.Name = "labelReg12";
-            this.labelReg12.Size = new System.Drawing.Size(18, 20);
+            this.labelReg12.Size = new System.Drawing.Size(13, 13);
             this.labelReg12.TabIndex = 55;
             this.labelReg12.Text = "0";
             // 
             // button17
             // 
             this.button17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button17.Location = new System.Drawing.Point(309, 783);
+            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.Location = new System.Drawing.Point(206, 509);
+            this.button17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(59, 40);
+            this.button17.Size = new System.Drawing.Size(39, 26);
             this.button17.TabIndex = 54;
             this.button17.Text = "Read";
             this.button17.UseVisualStyleBackColor = true;
@@ -600,26 +661,30 @@
             // 
             this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(197, 793);
+            this.label28.Location = new System.Drawing.Point(131, 515);
+            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(102, 20);
+            this.label28.Size = new System.Drawing.Size(68, 13);
             this.label28.TabIndex = 53;
             this.label28.Text = "Comm. ERR.";
             // 
             // labelReg13
             // 
             this.labelReg13.AutoSize = true;
-            this.labelReg13.Location = new System.Drawing.Point(334, 130);
+            this.labelReg13.Location = new System.Drawing.Point(223, 84);
+            this.labelReg13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReg13.Name = "labelReg13";
-            this.labelReg13.Size = new System.Drawing.Size(18, 20);
+            this.labelReg13.Size = new System.Drawing.Size(13, 13);
             this.labelReg13.TabIndex = 58;
             this.labelReg13.Text = "0";
             // 
             // button18
             // 
-            this.button18.Location = new System.Drawing.Point(269, 122);
+            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button18.Location = new System.Drawing.Point(179, 79);
+            this.button18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(59, 33);
+            this.button18.Size = new System.Drawing.Size(39, 21);
             this.button18.TabIndex = 57;
             this.button18.Text = "Read";
             this.button18.UseVisualStyleBackColor = true;
@@ -628,26 +693,30 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(186, 128);
+            this.label30.Location = new System.Drawing.Point(124, 83);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(77, 20);
+            this.label30.Size = new System.Drawing.Size(52, 13);
             this.label30.TabIndex = 56;
             this.label30.Text = "Sen. CAL";
             // 
             // labelReg15
             // 
             this.labelReg15.AutoSize = true;
-            this.labelReg15.Location = new System.Drawing.Point(159, 204);
+            this.labelReg15.Location = new System.Drawing.Point(106, 133);
+            this.labelReg15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReg15.Name = "labelReg15";
-            this.labelReg15.Size = new System.Drawing.Size(18, 20);
+            this.labelReg15.Size = new System.Drawing.Size(13, 13);
             this.labelReg15.TabIndex = 61;
             this.labelReg15.Text = "0";
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(94, 198);
+            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button19.Location = new System.Drawing.Point(63, 129);
+            this.button19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(59, 33);
+            this.button19.Size = new System.Drawing.Size(39, 21);
             this.button19.TabIndex = 60;
             this.button19.Text = "Read";
             this.button19.UseVisualStyleBackColor = true;
@@ -656,26 +725,30 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(3, 204);
+            this.label32.Location = new System.Drawing.Point(2, 133);
+            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(88, 20);
+            this.label32.Size = new System.Drawing.Size(60, 13);
             this.label32.TabIndex = 59;
             this.label32.Text = "Sen. OFST";
             // 
             // labelReg17
             // 
             this.labelReg17.AutoSize = true;
-            this.labelReg17.Location = new System.Drawing.Point(159, 244);
+            this.labelReg17.Location = new System.Drawing.Point(106, 159);
+            this.labelReg17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReg17.Name = "labelReg17";
-            this.labelReg17.Size = new System.Drawing.Size(18, 20);
+            this.labelReg17.Size = new System.Drawing.Size(13, 13);
             this.labelReg17.TabIndex = 64;
             this.labelReg17.Text = "0";
             // 
             // button20
             // 
-            this.button20.Location = new System.Drawing.Point(94, 237);
+            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button20.Location = new System.Drawing.Point(63, 154);
+            this.button20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(59, 33);
+            this.button20.Size = new System.Drawing.Size(39, 21);
             this.button20.TabIndex = 63;
             this.button20.Text = "Read";
             this.button20.UseVisualStyleBackColor = true;
@@ -684,9 +757,10 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(10, 244);
+            this.label34.Location = new System.Drawing.Point(7, 159);
+            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(81, 20);
+            this.label34.Size = new System.Drawing.Size(55, 13);
             this.label34.TabIndex = 62;
             this.label34.Text = "Ins. OFST";
             // 
@@ -694,18 +768,21 @@
             // 
             this.labelReg19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelReg19.AutoSize = true;
-            this.labelReg19.Location = new System.Drawing.Point(374, 748);
+            this.labelReg19.Location = new System.Drawing.Point(249, 486);
+            this.labelReg19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReg19.Name = "labelReg19";
-            this.labelReg19.Size = new System.Drawing.Size(18, 20);
+            this.labelReg19.Size = new System.Drawing.Size(13, 13);
             this.labelReg19.TabIndex = 67;
             this.labelReg19.Text = "0";
             // 
             // button21
             // 
             this.button21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button21.Location = new System.Drawing.Point(309, 738);
+            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button21.Location = new System.Drawing.Point(206, 480);
+            this.button21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(59, 40);
+            this.button21.Size = new System.Drawing.Size(39, 26);
             this.button21.TabIndex = 66;
             this.button21.Text = "Read";
             this.button21.UseVisualStyleBackColor = true;
@@ -715,9 +792,10 @@
             // 
             this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(235, 748);
+            this.label36.Location = new System.Drawing.Point(157, 486);
+            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(68, 20);
+            this.label36.Size = new System.Drawing.Size(47, 13);
             this.label36.TabIndex = 65;
             this.label36.Text = "Sw. Ver.";
             // 
@@ -725,9 +803,10 @@
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(703, 793);
+            this.comboBox1.Location = new System.Drawing.Point(469, 515);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.Size = new System.Drawing.Size(82, 21);
             this.comboBox1.TabIndex = 68;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -735,9 +814,10 @@
             // 
             this.button22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button22.Location = new System.Drawing.Point(838, 835);
+            this.button22.Location = new System.Drawing.Point(559, 543);
+            this.button22.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(121, 40);
+            this.button22.Size = new System.Drawing.Size(81, 26);
             this.button22.TabIndex = 69;
             this.button22.Text = "Connect";
             this.button22.UseVisualStyleBackColor = true;
@@ -746,9 +826,10 @@
             // button23
             // 
             this.button23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button23.Location = new System.Drawing.Point(703, 835);
+            this.button23.Location = new System.Drawing.Point(469, 543);
+            this.button23.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(121, 40);
+            this.button23.Size = new System.Drawing.Size(81, 26);
             this.button23.TabIndex = 70;
             this.button23.Text = "Disconnect";
             this.button23.UseVisualStyleBackColor = true;
@@ -758,9 +839,10 @@
             // 
             this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(904, 763);
+            this.label37.Location = new System.Drawing.Point(603, 496);
+            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(53, 20);
+            this.label37.Size = new System.Drawing.Size(36, 13);
             this.label37.TabIndex = 71;
             this.label37.Text = "Serial:";
             // 
@@ -768,9 +850,10 @@
             // 
             this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(700, 763);
+            this.label38.Location = new System.Drawing.Point(467, 496);
+            this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(198, 20);
+            this.label38.Size = new System.Drawing.Size(137, 13);
             this.label38.TabIndex = 72;
             this.label38.Text = "19200 b/s 8E1 Slave ID= 1";
             // 
@@ -778,9 +861,10 @@
             // 
             this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(727, 577);
+            this.label39.Location = new System.Drawing.Point(485, 375);
+            this.label39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(102, 20);
+            this.label39.Size = new System.Drawing.Size(69, 13);
             this.label39.TabIndex = 73;
             this.label39.Text = "Poll Rate ms:";
             // 
@@ -788,42 +872,47 @@
             // 
             this.comboBoxPollRate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxPollRate.FormattingEnabled = true;
-            this.comboBoxPollRate.Location = new System.Drawing.Point(835, 574);
+            this.comboBoxPollRate.Location = new System.Drawing.Point(557, 373);
+            this.comboBoxPollRate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxPollRate.Name = "comboBoxPollRate";
-            this.comboBoxPollRate.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxPollRate.Size = new System.Drawing.Size(82, 21);
             this.comboBoxPollRate.TabIndex = 74;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(164, 79);
+            this.textBox1.Location = new System.Drawing.Point(109, 51);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 26);
+            this.textBox1.Size = new System.Drawing.Size(82, 20);
             this.textBox1.TabIndex = 75;
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(15, 79);
+            this.textBox2.Location = new System.Drawing.Point(10, 51);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 26);
+            this.textBox2.Size = new System.Drawing.Size(82, 20);
             this.textBox2.TabIndex = 76;
             this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(11, 53);
+            this.label40.Location = new System.Drawing.Point(7, 34);
+            this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(130, 20);
+            this.label40.Size = new System.Drawing.Size(90, 13);
             this.label40.TabIndex = 77;
             this.label40.Text = "Ground level V/m";
             // 
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(160, 53);
+            this.label42.Location = new System.Drawing.Point(107, 34);
+            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(134, 20);
+            this.label42.Size = new System.Drawing.Size(91, 13);
             this.label42.TabIndex = 79;
             this.label42.Text = "Final position V/m";
             // 
@@ -831,17 +920,19 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(163, 181);
+            this.label43.Location = new System.Drawing.Point(109, 118);
+            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(44, 20);
+            this.label43.Size = new System.Drawing.Size(32, 13);
             this.label43.TabIndex = 80;
             this.label43.Text = "1,00";
             // 
             // button24
             // 
-            this.button24.Location = new System.Drawing.Point(15, 171);
+            this.button24.Location = new System.Drawing.Point(10, 111);
+            this.button24.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(121, 40);
+            this.button24.Size = new System.Drawing.Size(81, 26);
             this.button24.TabIndex = 81;
             this.button24.Text = "Calculate";
             this.button24.UseVisualStyleBackColor = true;
@@ -849,9 +940,10 @@
             // 
             // button25
             // 
-            this.button25.Location = new System.Drawing.Point(15, 230);
+            this.button25.Location = new System.Drawing.Point(10, 150);
+            this.button25.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(121, 40);
+            this.button25.Size = new System.Drawing.Size(81, 26);
             this.button25.TabIndex = 82;
             this.button25.Text = "Store";
             this.button25.UseVisualStyleBackColor = true;
@@ -859,9 +951,10 @@
             // 
             // button26
             // 
-            this.button26.Location = new System.Drawing.Point(15, 10);
+            this.button26.Location = new System.Drawing.Point(10, 6);
+            this.button26.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(121, 40);
+            this.button26.Size = new System.Drawing.Size(81, 26);
             this.button26.TabIndex = 83;
             this.button26.Text = "Start";
             this.button26.UseVisualStyleBackColor = true;
@@ -869,9 +962,10 @@
             // 
             // button27
             // 
-            this.button27.Location = new System.Drawing.Point(15, 114);
+            this.button27.Location = new System.Drawing.Point(10, 74);
+            this.button27.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(121, 40);
+            this.button27.Size = new System.Drawing.Size(81, 26);
             this.button27.TabIndex = 84;
             this.button27.Text = "Read";
             this.button27.UseVisualStyleBackColor = true;
@@ -879,9 +973,10 @@
             // 
             // button28
             // 
-            this.button28.Location = new System.Drawing.Point(164, 114);
+            this.button28.Location = new System.Drawing.Point(109, 74);
+            this.button28.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(121, 40);
+            this.button28.Size = new System.Drawing.Size(81, 26);
             this.button28.TabIndex = 85;
             this.button28.Text = "Read";
             this.button28.UseVisualStyleBackColor = true;
@@ -893,9 +988,10 @@
             this.labelStatus.AutoSize = true;
             this.labelStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStatus.ForeColor = System.Drawing.Color.Red;
-            this.labelStatus.Location = new System.Drawing.Point(834, 796);
+            this.labelStatus.Location = new System.Drawing.Point(556, 517);
+            this.labelStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(129, 20);
+            this.labelStatus.Size = new System.Drawing.Size(92, 13);
             this.labelStatus.TabIndex = 86;
             this.labelStatus.Text = "Not Connected";
             this.labelStatus.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -905,18 +1001,20 @@
             this.label44.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(738, 734);
+            this.label44.Location = new System.Drawing.Point(492, 477);
+            this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(183, 20);
+            this.label44.Size = new System.Drawing.Size(128, 13);
             this.label44.TabIndex = 87;
             this.label44.Text = "Serial Communication";
             // 
             // buttonStartPolling
             // 
             this.buttonStartPolling.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonStartPolling.Location = new System.Drawing.Point(835, 621);
+            this.buttonStartPolling.Location = new System.Drawing.Point(557, 404);
+            this.buttonStartPolling.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonStartPolling.Name = "buttonStartPolling";
-            this.buttonStartPolling.Size = new System.Drawing.Size(121, 40);
+            this.buttonStartPolling.Size = new System.Drawing.Size(81, 26);
             this.buttonStartPolling.TabIndex = 88;
             this.buttonStartPolling.Text = "Start Polling";
             this.buttonStartPolling.UseVisualStyleBackColor = true;
@@ -925,9 +1023,10 @@
             // buttonStopPolling
             // 
             this.buttonStopPolling.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonStopPolling.Location = new System.Drawing.Point(835, 674);
+            this.buttonStopPolling.Location = new System.Drawing.Point(557, 438);
+            this.buttonStopPolling.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonStopPolling.Name = "buttonStopPolling";
-            this.buttonStopPolling.Size = new System.Drawing.Size(121, 40);
+            this.buttonStopPolling.Size = new System.Drawing.Size(81, 26);
             this.buttonStopPolling.TabIndex = 89;
             this.buttonStopPolling.Text = "Stop Polling";
             this.buttonStopPolling.UseVisualStyleBackColor = true;
@@ -938,17 +1037,18 @@
             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(17, 23);
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
+            this.chart1.Location = new System.Drawing.Point(11, 15);
+            this.chart1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(1346, 518);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
+            this.chart1.Size = new System.Drawing.Size(897, 337);
             this.chart1.TabIndex = 90;
             this.chart1.Text = "chart1";
             // 
@@ -957,10 +1057,11 @@
             this.calTab1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.calTab1.Controls.Add(this.tabPage1);
             this.calTab1.Controls.Add(this.tabPage2);
-            this.calTab1.Location = new System.Drawing.Point(994, 569);
+            this.calTab1.Location = new System.Drawing.Point(663, 370);
+            this.calTab1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.calTab1.Name = "calTab1";
             this.calTab1.SelectedIndex = 0;
-            this.calTab1.Size = new System.Drawing.Size(371, 312);
+            this.calTab1.Size = new System.Drawing.Size(247, 203);
             this.calTab1.TabIndex = 91;
             // 
             // tabPage1
@@ -976,10 +1077,11 @@
             this.tabPage1.Controls.Add(this.button26);
             this.tabPage1.Controls.Add(this.button24);
             this.tabPage1.Controls.Add(this.button25);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(363, 279);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Size = new System.Drawing.Size(239, 177);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Form Factor CAL";
             // 
@@ -1012,10 +1114,11 @@
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.labelReg1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(363, 279);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Size = new System.Drawing.Size(239, 177);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Fieled Mill CAL";
             // 
@@ -1024,10 +1127,11 @@
             this.textBoxDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxDate.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxDate.Location = new System.Drawing.Point(1221, 475);
+            this.textBoxDate.Location = new System.Drawing.Point(814, 309);
+            this.textBoxDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxDate.Name = "textBoxDate";
             this.textBoxDate.ReadOnly = true;
-            this.textBoxDate.Size = new System.Drawing.Size(100, 19);
+            this.textBoxDate.Size = new System.Drawing.Size(67, 13);
             this.textBoxDate.TabIndex = 92;
             this.textBoxDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1038,9 +1142,10 @@
             // buttonSaveForm
             // 
             this.buttonSaveForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonSaveForm.Location = new System.Drawing.Point(247, 834);
+            this.buttonSaveForm.Location = new System.Drawing.Point(165, 542);
+            this.buttonSaveForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSaveForm.Name = "buttonSaveForm";
-            this.buttonSaveForm.Size = new System.Drawing.Size(121, 40);
+            this.buttonSaveForm.Size = new System.Drawing.Size(81, 26);
             this.buttonSaveForm.TabIndex = 93;
             this.buttonSaveForm.Text = "Save";
             this.buttonSaveForm.UseVisualStyleBackColor = true;
@@ -1051,9 +1156,10 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Location = new System.Drawing.Point(3, 13);
+            this.panel1.Location = new System.Drawing.Point(2, 8);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1375, 561);
+            this.panel1.Size = new System.Drawing.Size(917, 365);
             this.panel1.TabIndex = 94;
             // 
             // radioButton15Min
@@ -1061,10 +1167,12 @@
             this.radioButton15Min.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButton15Min.AutoSize = true;
             this.radioButton15Min.Checked = true;
-            this.radioButton15Min.Location = new System.Drawing.Point(609, 644);
+            this.radioButton15Min.Location = new System.Drawing.Point(404, 418);
+            this.radioButton15Min.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton15Min.Name = "radioButton15Min";
-            this.radioButton15Min.Size = new System.Drawing.Size(81, 24);
+            this.radioButton15Min.Size = new System.Drawing.Size(56, 17);
             this.radioButton15Min.TabIndex = 95;
+            this.radioButton15Min.TabStop = true;
             this.radioButton15Min.Text = "15 min";
             this.radioButton15Min.UseMnemonic = false;
             this.radioButton15Min.UseVisualStyleBackColor = true;
@@ -1073,9 +1181,10 @@
             // 
             this.radioButton5Min.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButton5Min.AutoSize = true;
-            this.radioButton5Min.Location = new System.Drawing.Point(609, 674);
+            this.radioButton5Min.Location = new System.Drawing.Point(404, 437);
+            this.radioButton5Min.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton5Min.Name = "radioButton5Min";
-            this.radioButton5Min.Size = new System.Drawing.Size(72, 24);
+            this.radioButton5Min.Size = new System.Drawing.Size(50, 17);
             this.radioButton5Min.TabIndex = 96;
             this.radioButton5Min.Text = "5 min";
             this.radioButton5Min.UseVisualStyleBackColor = true;
@@ -1084,9 +1193,10 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(605, 577);
+            this.label6.Location = new System.Drawing.Point(403, 375);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 20);
+            this.label6.Size = new System.Drawing.Size(65, 13);
             this.label6.TabIndex = 97;
             this.label6.Text = "X-axis range";
             // 
@@ -1094,9 +1204,10 @@
             // 
             this.radioButton60Min.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButton60Min.AutoSize = true;
-            this.radioButton60Min.Location = new System.Drawing.Point(609, 614);
+            this.radioButton60Min.Location = new System.Drawing.Point(404, 398);
+            this.radioButton60Min.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton60Min.Name = "radioButton60Min";
-            this.radioButton60Min.Size = new System.Drawing.Size(81, 24);
+            this.radioButton60Min.Size = new System.Drawing.Size(56, 17);
             this.radioButton60Min.TabIndex = 98;
             this.radioButton60Min.Text = "60 min";
             this.radioButton60Min.UseMnemonic = false;
@@ -1104,9 +1215,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1378, 894);
+            this.ClientSize = new System.Drawing.Size(919, 581);
             this.Controls.Add(this.radioButton60Min);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.radioButton5Min);
@@ -1160,8 +1271,9 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
-            this.Padding = new System.Windows.Forms.Padding(0, 0, 25, 25);
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 17, 16);
             this.Text = "Field Mill V1.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();

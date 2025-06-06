@@ -39,7 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EasyModbus">
-      <HintPath>..\..\..\..\OneDrive - Bioskin Italia S.r.l\Documenti\Field_Mill\Modbus\EasyModbusTCP .NET Package V5.6\EasyModbusLibrary for .NET (DLL)\EasyModbus.dll</HintPath>
+      <HintPath>..\..\..\..\..\OneDrive - Bioskin Italia S.r.l\Documenti\Field_Mill\Modbus\EasyModbusTCP .NET Package V5.6\EasyModbusLibrary for .NET (DLL)\EasyModbus.dll</HintPath>
     </Reference>
     <Reference Include="HarfBuzzSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\HarfBuzzSharp.7.3.0.3\lib\net462\HarfBuzzSharp.dll</HintPath>
