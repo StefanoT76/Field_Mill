@@ -60,7 +60,7 @@ namespace Field_Mill
 
 
 
-            button8.Enabled = false;      /// Buttons used as indicators are disabled
+            //button8.Enabled = false;      /// Buttons used as indicators are disabled
             button10.Enabled = false;
             button11.Enabled = false;
             button12.Enabled = false;
@@ -134,7 +134,7 @@ namespace Field_Mill
             timer1.Interval = 60000; // check every minute
             timer1.Start();
 
-            LoadResultFromFile();
+            LoadResultFromFile();    // load calibration data from file
 
             string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
             string logFolder = Path.Combine(Application.StartupPath, "Logs");
@@ -442,7 +442,7 @@ namespace Field_Mill
         }
 
         /////////////////////////////////////// ERRORS ////////////////////////////////////////////
-
+        /*
         private void button17_Click(object sender, EventArgs e)
         {
             int[] Reg12 = new int[1];
@@ -450,7 +450,7 @@ namespace Field_Mill
             Reg12 = modbusClient.ReadHoldingRegisters(12, 1);
             labelReg12.Text = Reg12[0].ToString();
         }
-
+        */
         ///////////////////////////////////// SENSITIVE CH CAL ////////////////////////////////////
 
         private void button18_Click(object sender, EventArgs e)
@@ -482,6 +482,8 @@ namespace Field_Mill
         }
 
         ///////////////////////////////////  SOFTWARE VERSION  ////////////////////////////////////////
+        
+        /*
         private void button21_Click(object sender, EventArgs e)
         {
             int[] Reg19 = new int[1];
@@ -489,7 +491,7 @@ namespace Field_Mill
             Reg19 = modbusClient.ReadHoldingRegisters(19, 1);
             labelReg19.Text = Reg19[0].ToString();
         }
-
+        */
         /////////////////////////////////// CALIBRATION FACTOR /////////////////////////////////////////
 
         private void button26_Click(object sender, EventArgs e)   ///  START
@@ -530,17 +532,32 @@ namespace Field_Mill
             }
         }
 
-        private void button27_Click(object sender, EventArgs e)   //// Read V/m from sensitive
+       
+        private void button27_Click(object sender, EventArgs e)   // Read V/m from sensitive
         {
-            float Reg5_6;
+            try
+            {
+                float reg5_6 = EasyModbus.ModbusClient.ConvertRegistersToFloat(
+                    modbusClient.ReadHoldingRegisters(5, 2),
+                    RegisterOrder.LowHigh
+                );
 
-            Reg5_6 = EasyModbus.ModbusClient.ConvertRegistersToFloat(modbusClient.ReadHoldingRegisters(5, 2), RegisterOrder.LowHigh);
-            textBox2.Text = Reg5_6.ToString();
+                textBox2.Text = reg5_6.ToString("F2");
 
-            MessageBox.Show("Place the field mill at final position level facing down and insert the measurment in the Final Position V/m box");
-            textBox1.Enabled = true;
-            button28.Enabled = true;
-            textBox1.Focus();  // <-- Move focus here
+                MessageBox.Show("Place the field mill at final position level facing down and insert the measurement in the Final Position V/m box");
+
+                textBox1.Enabled = true;
+                button28.Enabled = true;
+                textBox1.Focus();  // Move focus here
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Timeout while reading registers 5 and 6. Check connection.", "Modbus Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error reading registers 5 and 6:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)  //// Check float in final position
@@ -564,16 +581,32 @@ namespace Field_Mill
             }
         }
 
-        private void button28_Click(object sender, EventArgs e)  //// Read V/m from sensitive
+       
+
+        private void button28_Click(object sender, EventArgs e)  // Read V/m from sensitive
         {
-            float Reg5_6;
+            try
+            {
+                float reg5_6 = EasyModbus.ModbusClient.ConvertRegistersToFloat(
+                    modbusClient.ReadHoldingRegisters(5, 2),
+                    RegisterOrder.LowHigh
+                );
 
-            Reg5_6 = EasyModbus.ModbusClient.ConvertRegistersToFloat(modbusClient.ReadHoldingRegisters(5, 2), RegisterOrder.LowHigh);
-            textBox1.Text = Reg5_6.ToString();
+                textBox1.Text = reg5_6.ToString("F2");
 
-            MessageBox.Show("Now press the calculate button to obtain the correction factor");
-            button24.Enabled = true;
-            button24.Focus();  // <-- Move focus here
+                MessageBox.Show("Now press the calculate button to obtain the correction factor");
+
+                button24.Enabled = true;
+                button24.Focus();  // Move focus to calculate button
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Timeout while reading registers 5 and 6. Please check the connection.", "Modbus Timeout", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error reading registers 5 and 6:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button24_Click(object sender, EventArgs e)  /// Calculte the factor
@@ -988,6 +1021,45 @@ namespace Field_Mill
                 timeWindowMinutes = 15;
             else if (radioButton60Min.Checked)
                 timeWindowMinutes = 60;
+        }
+
+        private void button8_Click(object sender, EventArgs e)   // rotor enable or disable
+        {
+            try
+            {
+                // Step 1: Read current value of register 9
+                int[] reg9 = modbusClient.ReadHoldingRegisters(9, 1);
+                int currentValue = reg9[0];
+
+                // Step 2: Toggle bit 0
+                bool bit0IsSet = (currentValue & 0x0001) != 0;
+                int newValue;
+
+                if (bit0IsSet)
+                {
+                    // Clear bit 0
+                    newValue = currentValue & ~0x0001;
+                }
+                else
+                {
+                    // Set bit 0
+                    newValue = currentValue | 0x0001;
+                }
+
+                // Step 3: Write the modified value back to register 9
+                modbusClient.WriteSingleRegister(9, newValue);
+
+                // Optional: Feedback
+               // MessageBox.Show($"Bit 0 has been {(bit0IsSet ? "cleared" : "set")}.", "Bit Toggle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Timeout while communicating with Modbus device.", "Timeout", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error toggling bit 0 of register 9:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 
