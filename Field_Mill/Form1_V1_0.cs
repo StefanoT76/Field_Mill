@@ -61,8 +61,8 @@ namespace Field_Mill
 
 
             //button8.Enabled = false;      /// Buttons used as indicators are disabled
-            button10.Enabled = false;
-            button11.Enabled = false;
+            //button10.Enabled = false;
+            //button11.Enabled = false;
             button12.Enabled = false;
             button13.Enabled = false;
             button14.Enabled = false;
@@ -703,8 +703,26 @@ namespace Field_Mill
                     SetLabel(0, r[0].ToString()); // Int16
 
                     SetLabel(1, ConvertRegistersToFloat(r[1], r[2]).ToString("F2")); // Float
-                    SetLabel(3, ConvertRegistersToFloat(r[3], r[4]).ToString("F2")); // Float
-                    SetLabel(5, ConvertRegistersToFloat(r[5], r[6]).ToString("F2")); // Float
+
+
+                    float calibrationFactor = 1.0f;                                 /// display calibrated data in labels 
+                    if (float.TryParse(label43.Text, out float parsedFactor))
+                    {
+                        calibrationFactor = parsedFactor;
+                    }
+
+                    float rawValue3 = ConvertRegistersToFloat(r[3], r[4]);
+                    float rawValue5 = ConvertRegistersToFloat(r[5], r[6]);
+
+                    float calibratedValue3 = rawValue3 * calibrationFactor;
+                    float calibratedValue5 = rawValue5 * calibrationFactor;
+
+                    SetLabel(3, calibratedValue3.ToString("F2"));
+                    SetLabel(5, calibratedValue5.ToString("F2"));
+
+
+                    //SetLabel(3, ConvertRegistersToFloat(r[3], r[4]).ToString("F2")); // Float
+                    //SetLabel(5, ConvertRegistersToFloat(r[5], r[6]).ToString("F2")); // Float
 
                     SetLabel(7, ConvertRegistersToLong(r[7], r[8]).ToString());      // Long
 
@@ -847,8 +865,10 @@ namespace Field_Mill
                         DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                         r[0].ToString(),
                         ConvertRegistersToFloat(r[1], r[2]).ToString("F2"),
-                        ConvertRegistersToFloat(r[3], r[4]).ToString("F2"),
-                        ConvertRegistersToFloat(r[5], r[6]).ToString("F2"),
+                        calibratedValue3.ToString("F2"),      // <- Calibrated value
+                        calibratedValue5.ToString("F2"),      // <- Calibrated value
+                        //ConvertRegistersToFloat(r[3], r[4]).ToString("F2"),
+                        //ConvertRegistersToFloat(r[5], r[6]).ToString("F2"),
                         ConvertRegistersToLong(r[7], r[8]).ToString(),
                         Convert.ToString(r[9], 2).PadLeft(16, '0'),
                         r[10].ToString(),
@@ -986,6 +1006,8 @@ namespace Field_Mill
             textBoxDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
         }
 
+        //////////////////////////////////////////////////// Image save /////////////////////////////////////////////////////////////////////
+
         private void buttonSaveForm_Click(object sender, EventArgs e)
         {
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
@@ -1023,7 +1045,9 @@ namespace Field_Mill
                 timeWindowMinutes = 60;
         }
 
-        private void button8_Click(object sender, EventArgs e)   // rotor enable or disable
+        //////////////////////////////////////////////////// Function Buttons /////////////////////////////////////////////////////////////////////
+
+        private void button8_Click(object sender, EventArgs e)   // plate short enable or disable
         {
             try
             {
@@ -1059,6 +1083,86 @@ namespace Field_Mill
             catch (Exception ex)
             {
                 MessageBox.Show($"Error toggling bit 0 of register 9:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+       
+
+        private void button10_Click(object sender, EventArgs e)  // rotor enable or disable
+        {
+            try
+            {
+                // Step 1: Read current value of register 9
+                int[] reg9 = modbusClient.ReadHoldingRegisters(9, 1);
+                int currentValue = reg9[0];
+
+                // Step 2: Toggle bit 1 (0x0002 is the mask for bit 1)
+                bool bit1IsSet = (currentValue & 0x0002) != 0;
+                int newValue;
+
+                if (bit1IsSet)
+                {
+                    // Clear bit 1
+                    newValue = currentValue & ~0x0002;
+                }
+                else
+                {
+                    // Set bit 1
+                    newValue = currentValue | 0x0002;
+                }
+
+                // Step 3: Write the modified value back to register 9
+                modbusClient.WriteSingleRegister(9, newValue);
+
+                // Optional: Visual feedback
+                //MessageBox.Show($"Bit 1 has been {(bit1IsSet ? "cleared" : "set")}.", "Bit Toggle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Timeout while communicating with Modbus device.", "Timeout", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error toggling bit 1 of register 9:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)  // heater enable or disable
+        {
+            try
+            {
+                // Step 1: Read current value of register 9
+                int[] reg9 = modbusClient.ReadHoldingRegisters(9, 1);
+                int currentValue = reg9[0];
+
+                // Step 2: Toggle bit 2 (0x0004 is the mask for bit 2)
+                bool bit2IsSet = (currentValue & 0x0004) != 0;
+                int newValue;
+
+                if (bit2IsSet)
+                {
+                    // Clear bit 2
+                    newValue = currentValue & ~0x0004;
+                }
+                else
+                {
+                    // Set bit 2
+                    newValue = currentValue | 0x0004;
+                }
+
+                // Step 3: Write the modified value back to register 9
+                modbusClient.WriteSingleRegister(9, newValue);
+
+                // Optional: Visual feedback
+                //MessageBox.Show($"Bit 2 has been {(bit2IsSet ? "cleared" : "set")}.", "Bit Toggle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Timeout while communicating with Modbus device.", "Timeout", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error toggling bit 2 of register 9:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
