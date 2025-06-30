@@ -218,7 +218,7 @@ namespace Field_Mill
 
         ////////////////////////////  WRITE COILS ////////////////////////////////////////////
 
-        private void Start_Click(object sender, EventArgs e)
+     /*   private void Start_Click(object sender, EventArgs e)
         {
             modbusClient.WriteSingleCoil(4, true);
 
@@ -271,227 +271,116 @@ namespace Field_Mill
             else
                 label5.Text = "1";
         }
+     */
+        
 
-        /////////////////////////////////////////////  ROTOR SPEED  //////////////////////////////
+        
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            int[] Reg0 = new int[1];
+       
 
-            try
-            {
-                if (modbusClient != null && modbusClient.Connected)
-                {
-                    // safe to use modbusClient
-                    Reg0 = modbusClient.ReadHoldingRegisters(0, 1);
-                    labelReg0.Text = Reg0[0].ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Serial port is not connected.");
-                }
-
-                //Reg0 = modbusClient.ReadHoldingRegisters(0, 1);
-                //label6.Text = Reg0[0].ToString();
-            }
-            catch (TimeoutException ex)
-            {
-                MessageBox.Show("No response from Modbus device.\nCheck wiring, address, and settings.\n\n" + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error during Modbus communication:\n" + ex.Message);
-            }
-
-
-        }
-
-        ///////////////////////////////////////////  INSENSITVE CH CAL  ///////////////////////////
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            float Reg1_2;
-
-            Reg1_2 = EasyModbus.ModbusClient.ConvertRegistersToFloat(modbusClient.ReadHoldingRegisters(1, 2), RegisterOrder.LowHigh);
-            labelReg1.Text = Reg1_2.ToString();
-        }
-
-        //////////////////////////////////////////  INSENSITIVE CH READING ///////////////////////
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            float Reg3_4;
-
-            Reg3_4 = EasyModbus.ModbusClient.ConvertRegistersToFloat(modbusClient.ReadHoldingRegisters(3, 2), RegisterOrder.LowHigh);
-            labelReg3.Text = Reg3_4.ToString();
-        }
-
-        //////////////////////////////////////////  SENSITIVE CH READING ////////////////////////
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            float Reg5_6;
-
-            Reg5_6 = EasyModbus.ModbusClient.ConvertRegistersToFloat(modbusClient.ReadHoldingRegisters(5, 2), RegisterOrder.LowHigh);
-            labelReg5.Text = Reg5_6.ToString();
-        }
-
-        ////////////////////////////////////////// INTENAL TEMPERATURE /////////////////////////////
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-            int[] Reg7_8 = new int[1];   /// This is a 32 bit long but here we get only the last 16 bits as otherwise became unstable
-            Reg7_8 = modbusClient.ReadHoldingRegisters(8, 1);
-            labelReg7.Text = Reg7_8[0].ToString();
-        }
-
-        /////////////////////////////////////////  STATUS ////////////////////////////////////////////////////////////////////
-        private void button9_Click(object sender, EventArgs e)
-        {
-
-            int[] Reg9 = new int[1];
-            Reg9 = modbusClient.ReadHoldingRegisters(9, 1);
-            string s = Convert.ToString(Reg9[0], 2).PadLeft(16, '0');
-
-            if (s[15] == '1')  // Plates short
-            {
-                button8.BackColor = Color.Red;
-                button8.Text = "On";
-            }
-            else
-            {
-                button8.BackColor = Color.Green;
-                button8.Text = "Off";
-            }
-
-            if (s[14] == '0')  // Motor ON
-            {
-                button10.BackColor = Color.Red;
-                button10.Text = "Off";
-            }
-            else
-            {
-                button10.BackColor = Color.Green;
-                button10.Text = "On";
-            }
-
-            if (s[13] == '0')  // Heater ON
-            {
-                button11.BackColor = Color.Green;
-                button11.Text = "Off";
-            }
-            else
-            {
-                button11.BackColor = Color.Yellow;
-                button11.Text = "On";
-            }
-
-            if (s[12] == '0')  // EEPROM WRITE
-            {
-                button12.BackColor = Color.Green;
-                button12.Text = "Off";
-            }
-            else
-            {
-                button12.BackColor = Color.Blue;
-                button12.Text = "WR";
-            }
-
-            if (s[7] == '0')  // Overflow InSensitive
-            {
-                button13.BackColor = Color.Green;
-                button13.Text = "No";
-            }
-            else
-            {
-                button13.BackColor = Color.Orange;
-                button13.Text = "Yes";
-            }
-
-            if (s[6] == '0')  // Overflow Sensitive
-            {
-                button14.BackColor = Color.Green;
-                button14.Text = "No";
-            }
-            else
-            {
-                button14.BackColor = Color.Orange;
-                button14.Text = "Yes";
-            }
-
-            labelReg9.Text = s;
-
-        }
-
-        ///////////////////////////// ZERO /////////////////////////////////////////////////////////
-        private void button15_Click(object sender, EventArgs e)
-        {
-            int[] Reg10 = new int[1];
-
-            Reg10 = modbusClient.ReadHoldingRegisters(10, 1);
-            labelReg10.Text = Reg10[0].ToString();
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-            int[] Reg11 = new int[1];
-
-            Reg11 = modbusClient.ReadHoldingRegisters(11, 1);
-            labelReg11.Text = Reg11[0].ToString();
-        }
-
-        /////////////////////////////////////// ERRORS ////////////////////////////////////////////
-        /*
-        private void button17_Click(object sender, EventArgs e)
-        {
-            int[] Reg12 = new int[1];
-
-            Reg12 = modbusClient.ReadHoldingRegisters(12, 1);
-            labelReg12.Text = Reg12[0].ToString();
-        }
-        */
-        ///////////////////////////////////// SENSITIVE CH CAL ////////////////////////////////////
+    
+        ///////////////////////////////////// SENSITIVE CH GAIN UPDATE////////////////////////////////////
 
         private void button18_Click(object sender, EventArgs e)
         {
-            float Reg13_14;
 
-            Reg13_14 = EasyModbus.ModbusClient.ConvertRegistersToFloat(modbusClient.ReadHoldingRegisters(13, 2), RegisterOrder.LowHigh);
-            labelReg13.Text = Reg13_14.ToString();
+            
+            if (!float.TryParse(textBox3.Text, out float valueToWrite))
+            {
+                MessageBox.Show("Please enter a valid float number to send to Modbus register 13.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox3.Focus();
+                textBox3.SelectAll();
+                return;
+            }
+
+            try
+            {
+                
+                modbusClient.WriteMultipleRegisters(13, EasyModbus.ModbusClient.ConvertFloatToRegisters((float)valueToWrite));
+                MessageBox.Show("SENSITIVE CH GAIN successfully written to register 13.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to write to Modbus: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        ///////////////////////////////////  SENSITIVE CH OFFSET /////////////////////////////////////
+        ///////////////////////////////////  SENSITIVE CH OFFSET UPDATE /////////////////////////////////////
 
         private void button19_Click(object sender, EventArgs e)
         {
-            float Reg15_16;
+            if (!float.TryParse(textBox4.Text, out float valueToWrite))
+            {
+                MessageBox.Show("Please enter a valid float number to send to Modbus register 15.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox4.Focus();
+                textBox4.SelectAll();
+                return;
+            }
 
-            Reg15_16 = EasyModbus.ModbusClient.ConvertRegistersToFloat(modbusClient.ReadHoldingRegisters(15, 2), RegisterOrder.LowHigh);
-            labelReg15.Text = Reg15_16.ToString();
+            try
+            {
+
+                modbusClient.WriteMultipleRegisters(15, EasyModbus.ModbusClient.ConvertFloatToRegisters((float)valueToWrite));
+                MessageBox.Show("SENSITIVE CH OFFSET successfully written to register 15.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to write to Modbus: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        ///////////////////////////////////  INSENSITIVE CH OFFSET /////////////////////////////////////
+        ///////////////////////////////////////////  INSENSITVE CH GAIN UPDATE  ///////////////////////////
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (!float.TryParse(textBox5.Text, out float valueToWrite))
+            {
+                MessageBox.Show("Please enter a valid float number to send to Modbus register 1.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox5.Focus();
+                textBox5.SelectAll();
+                return;
+            }
+
+            try
+            {
+
+                modbusClient.WriteMultipleRegisters(1, EasyModbus.ModbusClient.ConvertFloatToRegisters((float)valueToWrite));
+                MessageBox.Show("INSENSITIVE CH GAIN successfully written to register 1.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to write to Modbus: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
+        ///////////////////////////////////  INSENSITIVE CH OFFSET UPDATE/////////////////////////////////////
 
         private void button20_Click(object sender, EventArgs e)
         {
-            float Reg17_18;
+            if (!float.TryParse(textBox6.Text, out float valueToWrite))
+            {
+                MessageBox.Show("Please enter a valid float number to send to Modbus register 17.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox6.Focus();
+                textBox6.SelectAll();
+                return;
+            }
 
-            Reg17_18 = EasyModbus.ModbusClient.ConvertRegistersToFloat(modbusClient.ReadHoldingRegisters(17, 2), RegisterOrder.LowHigh);
-            labelReg17.Text = Reg17_18.ToString();
+            try
+            {
+
+                modbusClient.WriteMultipleRegisters(17, EasyModbus.ModbusClient.ConvertFloatToRegisters((float)valueToWrite));
+                MessageBox.Show("INSENSITIVE CH OFFSET successfully written to register 17.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to write to Modbus: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        ///////////////////////////////////  SOFTWARE VERSION  ////////////////////////////////////////
-        
-        /*
-        private void button21_Click(object sender, EventArgs e)
-        {
-            int[] Reg19 = new int[1];
-
-            Reg19 = modbusClient.ReadHoldingRegisters(19, 1);
-            labelReg19.Text = Reg19[0].ToString();
-        }
-        */
+       
         /////////////////////////////////// CALIBRATION FACTOR /////////////////////////////////////////
 
         private void button26_Click(object sender, EventArgs e)   ///  START
@@ -700,9 +589,9 @@ namespace Field_Mill
                 {
                     int[] r = modbusClient.ReadHoldingRegisters(0, 20);
 
-                    SetLabel(0, r[0].ToString()); // Int16
+                    SetLabel(0, r[0].ToString()); // Int16      /// ROTOR SPEED
 
-                    SetLabel(1, ConvertRegistersToFloat(r[1], r[2]).ToString("F2")); // Float
+                    SetLabel(1, ConvertRegistersToFloat(r[1], r[2]).ToString("F2", CultureInfo.GetCultureInfo("it-IT"))); // Float  /// INSENS GAIN
 
 
                     float calibrationFactor = 1.0f;                                 /// display calibrated data in labels 
@@ -724,7 +613,7 @@ namespace Field_Mill
                     //SetLabel(3, ConvertRegistersToFloat(r[3], r[4]).ToString("F2")); // Float
                     //SetLabel(5, ConvertRegistersToFloat(r[5], r[6]).ToString("F2")); // Float
 
-                    SetLabel(7, ConvertRegistersToLong(r[7], r[8]).ToString());      // Long
+                    SetLabel(7, ConvertRegistersToLong(r[7], r[8]).ToString());      // Long  // INTERNAL TEMP  
 
 
                     string s = Convert.ToString(r[9], 2).PadLeft(16, '0');   // Binary
@@ -781,11 +670,13 @@ namespace Field_Mill
                     // Overflow InSensitive
                     if (s[7] == '0')
                     {
+                        labelReg3.ForeColor = Color.LimeGreen;
                         button13.BackColor = Color.Green;
                         button13.Text = "No";
                     }
                     else
                     {
+                        labelReg3.ForeColor = Color.Orange;
                         button13.BackColor = Color.Orange;
                         button13.Text = "Yes";
                     }
@@ -793,11 +684,13 @@ namespace Field_Mill
                     // Overflow Sensitive
                     if (s[6] == '0')
                     {
+                        labelReg5.ForeColor = Color.LimeGreen;
                         button14.BackColor = Color.Green;
                         button14.Text = "No";
                     }
                     else
                     {
+                        labelReg5.ForeColor = Color.Orange;
                         button14.BackColor = Color.Orange;
                         button14.Text = "Yes";
                     }
@@ -809,9 +702,10 @@ namespace Field_Mill
                     SetLabel(11, r[11].ToString());
                     SetLabel(12, r[12].ToString());
 
-                    SetLabel(13, ConvertRegistersToFloat(r[13], r[14]).ToString("F2"));
-                    SetLabel(15, ConvertRegistersToFloat(r[15], r[16]).ToString("F2"));
-                    SetLabel(17, ConvertRegistersToFloat(r[17], r[18]).ToString("F2"));
+                    
+                    SetLabel(13, ConvertRegistersToFloat(r[13], r[14]).ToString("F2", CultureInfo.GetCultureInfo("it-IT")));    /// SENS GAIN
+                    SetLabel(15, ConvertRegistersToFloat(r[15], r[16]).ToString("F2", CultureInfo.GetCultureInfo("it-IT")));    /// SENS OFFSET
+                    SetLabel(17, ConvertRegistersToFloat(r[17], r[18]).ToString("F2", CultureInfo.GetCultureInfo("it-IT")));    /// INSENS OFFSET
 
                     SetLabel(19, r[19].ToString()); // Int16
 
@@ -918,6 +812,29 @@ namespace Field_Mill
         }
 
 
+
+        
+
+      /*  private void SetLabel(int regIndex, string text)
+        {
+            Control[] controls = this.Controls.Find($"labelReg{regIndex}", true);
+
+            if (controls.Length > 0)
+            {
+                Control ctrl = controls[0];
+
+                if (ctrl is System.Windows.Forms.Label label)
+                {
+                    label.Text = text;
+                }
+                else if (ctrl is System.Windows.Forms.TextBox textBox)
+                {
+                    textBox.Text = text;
+                }
+            }
+        } */
+
+
         private void SetLabel(int regIndex, string text)  /// Without register names
         {
             System.Windows.Forms.Label label = this.Controls.Find($"labelReg{regIndex}", true).FirstOrDefault() as System.Windows.Forms.Label;
@@ -927,16 +844,16 @@ namespace Field_Mill
             }
         }
 
+        
 
-
-       /* private void SetLabel(int regIndex, string text)   /// With register names
-        {
-            System.Windows.Forms.Label label = this.Controls.Find($"labelReg{regIndex}", true).FirstOrDefault() as System.Windows.Forms.Label;
-            if (label != null)
-            {
-                label.Text = $"R{regIndex}: {text}";
-            }
-        }*/
+        /* private void SetLabel(int regIndex, string text)   /// With register names
+         {
+             System.Windows.Forms.Label label = this.Controls.Find($"labelReg{regIndex}", true).FirstOrDefault() as System.Windows.Forms.Label;
+             if (label != null)
+             {
+                 label.Text = $"R{regIndex}: {text}";
+             }
+         }*/
 
         private void ShowConnectionErrorInLabels(string message)
         {
@@ -1163,6 +1080,30 @@ namespace Field_Mill
             catch (Exception ex)
             {
                 MessageBox.Show($"Error toggling bit 2 of register 9:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e) // write EEPROM
+        {
+            try
+            {
+                // 0x000A = 10 decimal
+                int pattern = 0x000A;
+
+                modbusClient.WriteSingleRegister(9, pattern);
+
+                MessageBox.Show("Calibration data written to EEPROM successfully, wait for reboot.",
+                                "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Operation timed out while writing to register 9.",
+                                "Timeout", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to write to register 9: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

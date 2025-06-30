@@ -29,18 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.Start = new System.Windows.Forms.Button();
-            this.Stop = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.labelReg0 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -65,15 +57,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.button14 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
-            this.button15 = new System.Windows.Forms.Button();
-            this.labelReg10 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.labelReg11 = new System.Windows.Forms.Label();
-            this.button16 = new System.Windows.Forms.Button();
             this.labelReg12 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.labelReg13 = new System.Windows.Forms.Label();
             this.button18 = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
             this.labelReg15 = new System.Windows.Forms.Label();
@@ -109,6 +94,13 @@
             this.calTab1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.labelReg13 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBoxDate = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.buttonSaveForm = new System.Windows.Forms.Button();
@@ -117,75 +109,12 @@
             this.radioButton5Min = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.radioButton60Min = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.calTab1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Start
-            // 
-            this.Start.Location = new System.Drawing.Point(47, 15);
-            this.Start.Margin = new System.Windows.Forms.Padding(2);
-            this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(81, 24);
-            this.Start.TabIndex = 0;
-            this.Start.Text = "Start";
-            this.Start.UseVisualStyleBackColor = true;
-            this.Start.Click += new System.EventHandler(this.Start_Click);
-            // 
-            // Stop
-            // 
-            this.Stop.Location = new System.Drawing.Point(131, 15);
-            this.Stop.Margin = new System.Windows.Forms.Padding(2);
-            this.Stop.Name = "Stop";
-            this.Stop.Size = new System.Drawing.Size(81, 24);
-            this.Stop.TabIndex = 1;
-            this.Stop.Text = "Stop";
-            this.Stop.UseVisualStyleBackColor = true;
-            this.Stop.Click += new System.EventHandler(this.Stop_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(131, 48);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 24);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Stop";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(47, 47);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 24);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Start";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Coil 4";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 53);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Coil 5";
             // 
             // label3
             // 
@@ -197,26 +126,6 @@
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "Rotor Hz";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(217, 20);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = ">";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(217, 53);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = ">";
             // 
             // labelReg0
             // 
@@ -232,29 +141,29 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(129, 107);
+            this.label7.Location = new System.Drawing.Point(22, 87);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Ins. CAL";
+            this.label7.Text = "Ins. GAIN";
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(179, 104);
+            this.button4.Location = new System.Drawing.Point(182, 85);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(39, 21);
+            this.button4.Size = new System.Drawing.Size(51, 21);
             this.button4.TabIndex = 13;
-            this.button4.Text = "Read";
+            this.button4.Text = "Update";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // labelReg1
             // 
             this.labelReg1.AutoSize = true;
-            this.labelReg1.Location = new System.Drawing.Point(223, 107);
+            this.labelReg1.Location = new System.Drawing.Point(77, 87);
             this.labelReg1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReg1.Name = "labelReg1";
             this.labelReg1.Size = new System.Drawing.Size(13, 13);
@@ -503,70 +412,6 @@
             this.label22.TabIndex = 46;
             this.label22.Text = "Sen. CH OVF";
             // 
-            // button15
-            // 
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(63, 79);
-            this.button15.Margin = new System.Windows.Forms.Padding(2);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(39, 21);
-            this.button15.TabIndex = 47;
-            this.button15.Text = "Read";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // labelReg10
-            // 
-            this.labelReg10.AutoSize = true;
-            this.labelReg10.Location = new System.Drawing.Point(106, 84);
-            this.labelReg10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelReg10.Name = "labelReg10";
-            this.labelReg10.Size = new System.Drawing.Size(13, 13);
-            this.labelReg10.TabIndex = 48;
-            this.labelReg10.Text = "0";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(9, 109);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(54, 13);
-            this.label24.TabIndex = 49;
-            this.label24.Text = "Zero Sen.";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(11, 84);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(49, 13);
-            this.label25.TabIndex = 52;
-            this.label25.Text = "Zero Ins.";
-            // 
-            // labelReg11
-            // 
-            this.labelReg11.AutoSize = true;
-            this.labelReg11.Location = new System.Drawing.Point(106, 108);
-            this.labelReg11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelReg11.Name = "labelReg11";
-            this.labelReg11.Size = new System.Drawing.Size(13, 13);
-            this.labelReg11.TabIndex = 51;
-            this.labelReg11.Text = "0";
-            // 
-            // button16
-            // 
-            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Location = new System.Drawing.Point(63, 105);
-            this.button16.Margin = new System.Windows.Forms.Padding(2);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(39, 21);
-            this.button16.TabIndex = 50;
-            this.button16.Text = "Read";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
-            // 
             // labelReg12
             // 
             this.labelReg12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -589,42 +434,32 @@
             this.label28.TabIndex = 53;
             this.label28.Text = "Comm. ERR.";
             // 
-            // labelReg13
-            // 
-            this.labelReg13.AutoSize = true;
-            this.labelReg13.Location = new System.Drawing.Point(223, 84);
-            this.labelReg13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelReg13.Name = "labelReg13";
-            this.labelReg13.Size = new System.Drawing.Size(13, 13);
-            this.labelReg13.TabIndex = 58;
-            this.labelReg13.Text = "0";
-            // 
             // button18
             // 
             this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.Location = new System.Drawing.Point(179, 79);
+            this.button18.Location = new System.Drawing.Point(182, 27);
             this.button18.Margin = new System.Windows.Forms.Padding(2);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(39, 21);
+            this.button18.Size = new System.Drawing.Size(51, 21);
             this.button18.TabIndex = 57;
-            this.button18.Text = "Read";
+            this.button18.Text = "Update";
             this.button18.UseVisualStyleBackColor = true;
             this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(124, 83);
+            this.label30.Location = new System.Drawing.Point(17, 30);
             this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(52, 13);
+            this.label30.Size = new System.Drawing.Size(58, 13);
             this.label30.TabIndex = 56;
-            this.label30.Text = "Sen. CAL";
+            this.label30.Text = "Sen. GAIN";
             // 
             // labelReg15
             // 
             this.labelReg15.AutoSize = true;
-            this.labelReg15.Location = new System.Drawing.Point(106, 133);
+            this.labelReg15.Location = new System.Drawing.Point(77, 53);
             this.labelReg15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReg15.Name = "labelReg15";
             this.labelReg15.Size = new System.Drawing.Size(13, 13);
@@ -634,19 +469,19 @@
             // button19
             // 
             this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.Location = new System.Drawing.Point(63, 129);
+            this.button19.Location = new System.Drawing.Point(182, 50);
             this.button19.Margin = new System.Windows.Forms.Padding(2);
             this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(39, 21);
+            this.button19.Size = new System.Drawing.Size(51, 21);
             this.button19.TabIndex = 60;
-            this.button19.Text = "Read";
+            this.button19.Text = "Update";
             this.button19.UseVisualStyleBackColor = true;
             this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(2, 133);
+            this.label32.Location = new System.Drawing.Point(15, 53);
             this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(60, 13);
@@ -656,7 +491,7 @@
             // labelReg17
             // 
             this.labelReg17.AutoSize = true;
-            this.labelReg17.Location = new System.Drawing.Point(106, 159);
+            this.labelReg17.Location = new System.Drawing.Point(77, 110);
             this.labelReg17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReg17.Name = "labelReg17";
             this.labelReg17.Size = new System.Drawing.Size(13, 13);
@@ -666,19 +501,19 @@
             // button20
             // 
             this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.Location = new System.Drawing.Point(63, 154);
+            this.button20.Location = new System.Drawing.Point(182, 107);
             this.button20.Margin = new System.Windows.Forms.Padding(2);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(39, 21);
+            this.button20.Size = new System.Drawing.Size(51, 21);
             this.button20.TabIndex = 63;
-            this.button20.Text = "Read";
+            this.button20.Text = "Update";
             this.button20.UseVisualStyleBackColor = true;
             this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(7, 159);
+            this.label34.Location = new System.Drawing.Point(21, 110);
             this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(55, 13);
@@ -945,17 +780,17 @@
             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(11, 15);
             this.chart1.Margin = new System.Windows.Forms.Padding(2);
             this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chart1.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(897, 337);
             this.chart1.TabIndex = 90;
             this.chart1.Text = "chart1";
@@ -996,23 +831,15 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.IndianRed;
-            this.tabPage2.Controls.Add(this.Stop);
-            this.tabPage2.Controls.Add(this.Start);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.textBox6);
+            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.labelReg13);
+            this.tabPage2.Controls.Add(this.textBox3);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.button15);
-            this.tabPage2.Controls.Add(this.labelReg10);
-            this.tabPage2.Controls.Add(this.label25);
-            this.tabPage2.Controls.Add(this.button16);
-            this.tabPage2.Controls.Add(this.label24);
-            this.tabPage2.Controls.Add(this.labelReg11);
+            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.button20);
             this.tabPage2.Controls.Add(this.label32);
-            this.tabPage2.Controls.Add(this.labelReg13);
             this.tabPage2.Controls.Add(this.labelReg17);
             this.tabPage2.Controls.Add(this.button18);
             this.tabPage2.Controls.Add(this.label30);
@@ -1029,6 +856,71 @@
             this.tabPage2.Size = new System.Drawing.Size(239, 177);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Fieled Mill CAL";
+            // 
+            // textBox6
+            // 
+            this.textBox6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox6.Location = new System.Drawing.Point(130, 107);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(51, 20);
+            this.textBox6.TabIndex = 103;
+            // 
+            // textBox5
+            // 
+            this.textBox5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox5.Location = new System.Drawing.Point(130, 84);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(51, 20);
+            this.textBox5.TabIndex = 102;
+            // 
+            // textBox4
+            // 
+            this.textBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox4.Location = new System.Drawing.Point(130, 50);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(51, 20);
+            this.textBox4.TabIndex = 101;
+            // 
+            // labelReg13
+            // 
+            this.labelReg13.AutoSize = true;
+            this.labelReg13.Location = new System.Drawing.Point(77, 30);
+            this.labelReg13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelReg13.Name = "labelReg13";
+            this.labelReg13.Size = new System.Drawing.Size(13, 13);
+            this.labelReg13.TabIndex = 100;
+            this.labelReg13.Text = "0";
+            // 
+            // textBox3
+            // 
+            this.textBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox3.Location = new System.Drawing.Point(130, 27);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(51, 20);
+            this.textBox3.TabIndex = 99;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(203, 13);
+            this.label1.TabIndex = 99;
+            this.label1.Text = "Calibration setup and calculator are need ";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(81, 141);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 21);
+            this.button1.TabIndex = 65;
+            this.button1.Text = "Write EEPROM";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBoxDate
             // 
@@ -1121,11 +1013,24 @@
             this.radioButton60Min.UseMnemonic = false;
             this.radioButton60Min.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(271, 503);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(183, 65);
+            this.label2.TabIndex = 99;
+            this.label2.Text = "How to use:\r\n1) Select the COM port\r\n2) Click \"Connect\"\r\n3) Click \"Start Polling\"" +
+    "\r\n4) Readings will appear on the graph.\r\n";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 581);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.radioButton60Min);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.radioButton5Min);
@@ -1189,16 +1094,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Start;
-        private System.Windows.Forms.Button Stop;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelReg0;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button4;
@@ -1223,15 +1119,8 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Label labelReg10;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label labelReg11;
-        private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Label labelReg12;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label labelReg13;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label labelReg15;
@@ -1275,6 +1164,14 @@
         private System.Windows.Forms.RadioButton radioButton5Min;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton radioButton60Min;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label labelReg13;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label2;
     }
 }
 
