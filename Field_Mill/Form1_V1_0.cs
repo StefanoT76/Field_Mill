@@ -141,7 +141,7 @@ namespace Field_Mill
             Directory.CreateDirectory(logFolder);
             csvFilePath = Path.Combine(logFolder, $"log_{timestamp}.csv");
 
-            File.AppendAllText(csvFilePath, "Timestamp,Reg0,Reg1_Float,Reg3_Float,Reg5_Float,Reg7_Long,Reg9_Binary,Reg10,Reg11,Reg12,Reg13_Float,Reg15_Float,Reg17_Float,Reg19\n");
+            File.AppendAllText(csvFilePath, "Timestamp,Rotor_Hz,INSENSITVE_CH_GAIN,INSENSITIVE_FIELD_V/m,SENSITIVE_FIELD_V/m,INTERNAL_TEMP,STATUS,INSENSITVE_CH_ZERO,SENSITVE_CH_ZERO,COM_ERRORS,SENSITIVE_CH_GAIN,SENSITIVE_CH_OFFSET,INSENSITIVE_CH_OFFSET,SW_VER\n");
 
 
             var ports = SerialPort.GetPortNames();
@@ -216,62 +216,7 @@ namespace Field_Mill
             }
         }
 
-        ////////////////////////////  WRITE COILS ////////////////////////////////////////////
-
-     /*   private void Start_Click(object sender, EventArgs e)
-        {
-            modbusClient.WriteSingleCoil(4, true);
-
-            bool[] Coil4 = new bool[1];
-
-            Coil4 = modbusClient.ReadCoils(4, 1);
-            if (Coil4[0] == false)
-                label4.Text = "0";
-            else
-                label4.Text = "1";
-        }
-
-        private void Stop_Click(object sender, EventArgs e)
-        {
-            modbusClient.WriteSingleCoil(4, false);
-
-            bool[] Coil4 = new bool[1];
-
-            Coil4 = modbusClient.ReadCoils(4, 1);
-            if (Coil4[0] == false)
-                label4.Text = "0";
-            else
-                label4.Text = "1";
-        }
-
-
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            modbusClient.WriteSingleCoil(5, true);
-
-            bool[] Coil5 = new bool[1];
-
-            Coil5 = modbusClient.ReadCoils(5, 1);
-            if (Coil5[0] == false)
-                label5.Text = "0";
-            else
-                label5.Text = "1";
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            modbusClient.WriteSingleCoil(5, false);
-
-            bool[] Coil5 = new bool[1];
-
-            Coil5 = modbusClient.ReadCoils(5, 1);
-            if (Coil5[0] == false)
-                label5.Text = "0";
-            else
-                label5.Text = "1";
-        }
-     */
+       
         
 
         
@@ -616,7 +561,7 @@ namespace Field_Mill
                     SetLabel(7, ConvertRegistersToLong(r[7], r[8]).ToString());      // Long  // INTERNAL TEMP  
 
 
-                    string s = Convert.ToString(r[9], 2).PadLeft(16, '0');   // Binary
+                    string s = Convert.ToString(r[9], 2).PadLeft(16, '0');   // Binary  STATUS
                     SetLabel(9, s);  // Still update the label with the binary string
 
                     // Plates short
@@ -707,7 +652,7 @@ namespace Field_Mill
                     SetLabel(15, ConvertRegistersToFloat(r[15], r[16]).ToString("F2", CultureInfo.GetCultureInfo("it-IT")));    /// SENS OFFSET
                     SetLabel(17, ConvertRegistersToFloat(r[17], r[18]).ToString("F2", CultureInfo.GetCultureInfo("it-IT")));    /// INSENS OFFSET
 
-                    SetLabel(19, r[19].ToString()); // Int16
+                    SetLabel(19, r[19].ToString()); // Int16   SW VER
 
                     // Parse float values from label text (safe version)
                     bool parsed3 = float.TryParse(labelReg3.Text.Split(':').Last().Trim(), out float value3);
@@ -750,29 +695,26 @@ namespace Field_Mill
                         series5.Points.RemoveAt(0);
                     }
 
-
-
-
                     // Prepare a CSV row
                     string logLine = string.Join(",", new string[]
                     {
-                        DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                        r[0].ToString(),
-                        ConvertRegistersToFloat(r[1], r[2]).ToString("F2"),
-                        calibratedValue3.ToString("F2"),      // <- Calibrated value
-                        calibratedValue5.ToString("F2"),      // <- Calibrated value
-                        //ConvertRegistersToFloat(r[3], r[4]).ToString("F2"),
-                        //ConvertRegistersToFloat(r[5], r[6]).ToString("F2"),
-                        ConvertRegistersToLong(r[7], r[8]).ToString(),
-                        Convert.ToString(r[9], 2).PadLeft(16, '0'),
-                        r[10].ToString(),
-                        r[11].ToString(),
-                        r[12].ToString(),
-                        ConvertRegistersToFloat(r[13], r[14]).ToString("F2"),
-                        ConvertRegistersToFloat(r[15], r[16]).ToString("F2"),
-                        ConvertRegistersToFloat(r[17], r[18]).ToString("F2"),
-                        r[19].ToString()
+                    DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture),
+                    r[0].ToString(CultureInfo.InvariantCulture),
+                    ConvertRegistersToFloat(r[1], r[2]).ToString("F2", CultureInfo.InvariantCulture),
+                    calibratedValue3.ToString("F2", CultureInfo.InvariantCulture),      // <- Calibrated value
+                    calibratedValue5.ToString("F2", CultureInfo.InvariantCulture),      // <- Calibrated value
+                    ConvertRegistersToLong(r[7], r[8]).ToString(CultureInfo.InvariantCulture),
+                    Convert.ToString(r[9], 2).PadLeft(16, '0'),
+                    r[10].ToString(CultureInfo.InvariantCulture),
+                    r[11].ToString(CultureInfo.InvariantCulture),
+                    r[12].ToString(CultureInfo.InvariantCulture),
+                    ConvertRegistersToFloat(r[13], r[14]).ToString("F2", CultureInfo.InvariantCulture),
+                    ConvertRegistersToFloat(r[15], r[16]).ToString("F2", CultureInfo.InvariantCulture),
+                    ConvertRegistersToFloat(r[17], r[18]).ToString("F2", CultureInfo.InvariantCulture),
+                    r[19].ToString(CultureInfo.InvariantCulture)
                     });
+
+                    
 
                     // Append to CSV
                     File.AppendAllText(csvFilePath, logLine + Environment.NewLine);
