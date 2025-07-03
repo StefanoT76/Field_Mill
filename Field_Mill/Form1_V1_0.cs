@@ -48,9 +48,10 @@ namespace Field_Mill
 
             InitializeComponent();                   ////  Initialize serial communication
 
-            filePath = Path.Combine(Application.StartupPath, "calibration.txt");
+            //filePath = Path.Combine(Application.StartupPath, "calibration.txt");
 
-
+            //string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "calibration.txt");
+            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "My_Instruments", "Field_Mill", "calibration.txt");
 
             radioButton15Min.CheckedChanged += RadioButtonTimeWindow_CheckedChanged;
             radioButton5Min.CheckedChanged += RadioButtonTimeWindow_CheckedChanged;
@@ -83,11 +84,21 @@ namespace Field_Mill
         {
             try
             {
+                string folderPath = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                    "My_Instruments", "Field_Mill"
+                );
+                string filePath = Path.Combine(folderPath, "calibration.txt");
+
+                // Ensure the directory exists
+                Directory.CreateDirectory(folderPath);
+
+                // Save using invariant culture
                 File.WriteAllText(filePath, result.ToString(CultureInfo.InvariantCulture));
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error saving result: " + ex.Message);
+                MessageBox.Show("Error saving result: " + ex.Message, "File Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -95,6 +106,12 @@ namespace Field_Mill
         {
             try
             {
+                string filePath = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                    "My_Instruments", "Field_Mill",
+                    "calibration.txt"
+                );
+
                 if (File.Exists(filePath))
                 {
                     string savedResult = File.ReadAllText(filePath);
@@ -106,11 +123,42 @@ namespace Field_Mill
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading saved result: " + ex.Message);
+                MessageBox.Show("Error loading saved result: " + ex.Message, "File Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        
+        /* private void SaveResultToFile(float result)
+         {
+             try
+             {
+                 File.WriteAllText(filePath, result.ToString(CultureInfo.InvariantCulture));
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show("Error saving result: " + ex.Message);
+             }
+         }
+
+         private void LoadResultFromFile()
+         {
+             try
+             {
+                 if (File.Exists(filePath))
+                 {
+                     string savedResult = File.ReadAllText(filePath);
+                     if (float.TryParse(savedResult, NumberStyles.Float, CultureInfo.InvariantCulture, out float loaded))
+                     {
+                         label43.Text = loaded.ToString(CultureInfo.CurrentCulture);
+                     }
+                 }
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show("Error loading saved result: " + ex.Message);
+             }
+         }*/
+
+
         private double timeWindowMinutes = 15;
         
 
@@ -137,11 +185,27 @@ namespace Field_Mill
             LoadResultFromFile();    // load calibration data from file
 
             string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-            string logFolder = Path.Combine(Application.StartupPath, "Logs");
+
+            // Define the log folder path in Documents\My_Instruments\Field_Mill\Logs
+            string logFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "My_Instruments", "Field_Mill", "Logs");
+
+            // Ensure the directory exists
             Directory.CreateDirectory(logFolder);
+
+            // Create full CSV file path
             csvFilePath = Path.Combine(logFolder, $"log_{timestamp}.csv");
 
-            File.AppendAllText(csvFilePath, "Timestamp,Rotor_Hz,INSENSITVE_CH_GAIN,INSENSITIVE_FIELD_V/m,SENSITIVE_FIELD_V/m,INTERNAL_TEMP,STATUS,INSENSITVE_CH_ZERO,SENSITVE_CH_ZERO,COM_ERRORS,SENSITIVE_CH_GAIN,SENSITIVE_CH_OFFSET,INSENSITIVE_CH_OFFSET,SW_VER\n");
+            // Write CSV header
+            File.AppendAllText(csvFilePath,
+                "Timestamp,Rotor_Hz,INSENSITVE_CH_GAIN,INSENSITIVE_FIELD_V/m,SENSITIVE_FIELD_V/m,INTERNAL_TEMP,STATUS,INSENSITVE_CH_ZERO,SENSITVE_CH_ZERO,COM_ERRORS,SENSITIVE_CH_GAIN,SENSITIVE_CH_OFFSET,INSENSITIVE_CH_OFFSET,SW_VER\n");
+
+
+            //string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+            //string logFolder = Path.Combine(Application.StartupPath, "Logs");
+            //Directory.CreateDirectory(logFolder);
+            //csvFilePath = Path.Combine(logFolder, $"log_{timestamp}.csv");
+
+            //File.AppendAllText(csvFilePath, "Timestamp,Rotor_Hz,INSENSITVE_CH_GAIN,INSENSITIVE_FIELD_V/m,SENSITIVE_FIELD_V/m,INTERNAL_TEMP,STATUS,INSENSITVE_CH_ZERO,SENSITVE_CH_ZERO,COM_ERRORS,SENSITIVE_CH_GAIN,SENSITIVE_CH_OFFSET,INSENSITIVE_CH_OFFSET,SW_VER\n");
 
 
             var ports = SerialPort.GetPortNames();
@@ -469,14 +533,55 @@ namespace Field_Mill
             button25.Focus();  // <-- Move focus to store
         }
 
-        private void button25_Click(object sender, EventArgs e)  //// store the value in a file
+
+        private void button25_Click(object sender, EventArgs e)  // Store the value in a file
         {
             if (float.TryParse(label43.Text, NumberStyles.Float, CultureInfo.CurrentCulture, out float num1))
             {
+                string folderPath = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                    "My_Instruments", "Field_Mill"
+                );
+                string filePath = Path.Combine(folderPath, "calibration.txt");
 
-                string filePath = Path.Combine(Application.StartupPath, "caibration.txt");
+                try
+                {
+                    // Ensure directory exists
+                    Directory.CreateDirectory(folderPath);
+
+                    // Write calibration value
+                    File.WriteAllText(filePath, num1.ToString(CultureInfo.InvariantCulture));
+
+                    // Optionally call SaveResultToFile(num1); if reusing that logic elsewhere
+
+                    textBox1.Enabled = false;
+                    textBox2.Enabled = false;
+                    button27.Enabled = false;
+                    button28.Enabled = false;
+                    button24.Enabled = false;
+                    button25.Enabled = false;
+
+                    MessageBox.Show("Calibration stored in:\n" + filePath, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error saving calibration file:\n" + ex.Message, "File Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid input. Please enter a valid number in the calibration field.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /*private void button25_Click(object sender, EventArgs e)  //// store the value in a file
+        {
+            if (float.TryParse(label43.Text, NumberStyles.Float, CultureInfo.CurrentCulture, out float num1))
+            {
+                
+                string filePath = Path.Combine(Application.StartupPath, "calibration.txt");
                 File.WriteAllText(filePath, num1.ToString(CultureInfo.InvariantCulture));
-
+                
                 SaveResultToFile(num1);
                 textBox1.Enabled = false;
                 textBox2.Enabled = false;
@@ -494,7 +599,7 @@ namespace Field_Mill
             {
                 MessageBox.Show("Invalid input. Please enter valid float numbers in both boxes.");
             }
-        }
+        }*/
 
         ////////////////////////////////////////  POLLING   ///////////////////////////////////////////////
         private void buttonStartPolling_Click(object sender, EventArgs e)  /// START

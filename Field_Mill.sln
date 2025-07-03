@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Field_Mill_Setup", "Field_Mill_Setup\Field_Mill_Setup.vdproj", "{A115E387-9E72-7FA4-8AC9-AFE1178B0F10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,8 @@ Global
 		{C8361242-DA0D-4F29-8B54-8C2BC7387AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8361242-DA0D-4F29-8B54-8C2BC7387AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8361242-DA0D-4F29-8B54-8C2BC7387AA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A115E387-9E72-7FA4-8AC9-AFE1178B0F10}.Debug|Any CPU.ActiveCfg = Debug
+		{A115E387-9E72-7FA4-8AC9-AFE1178B0F10}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
