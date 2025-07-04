@@ -1,0 +1,30 @@
+Field Mill Calibration
+Turn on the power supplies, PC, and field mill 10 minutes before starting the calibration.
+
+Set up the calibration jig and connect the field mill to ground.
+
+Set gain and offset to 3000 and 0 for the sensitive channel, and to 10000 and 0 for the insensitive channel.
+
+Apply 40V to the calibration jig and read the average value on the chart (Sensitive CH).
+
+Apply 200V to the calibration jig and read the average value on the chart (Insensitive CH).
+
+Apply 5000V to the calibration jig and read the average value on the chart (Sensitive CH).
+
+Apply 10000V to the calibration jig and read the average value on the chart (Insensitive CH).
+
+Watch out for overshoot — it takes some time for the reading to stabilize.
+
+Enter the readings into the calibration matrix.
+
+Load the calculated gain and offset values into the field mill.
+
+Apply 20V to the calibration jig and read the average value on the chart — it should display 100 V/m.
+
+Apply 200V to the calibration jig and read the average value on the chart — it should display 1000 V/m.
+
+Apply 5000V to the calibration jig and read the average value on the chart — it should display 25000 V/m.
+
+Apply 10000V to the calibration jig and read the average value on the chart — it should display 50000 V/m.
+
+Save.
