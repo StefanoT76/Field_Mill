@@ -20,7 +20,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using static EasyModbus.ModbusClient;
-using static ScottPlot.Generate;
+//using static ScottPlot.Generate;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
@@ -43,32 +43,20 @@ namespace Field_Mill
         public Form1()
         {
 
+            InitializeComponent();                     ///  Initialize serial communication
 
-
-
-            InitializeComponent();                   ////  Initialize serial communication
-
-            //filePath = Path.Combine(Application.StartupPath, "calibration.txt");
-
-            //string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "calibration.txt");
             string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "My_Instruments", "Field_Mill", "calibration.txt");
 
             radioButton15Min.CheckedChanged += RadioButtonTimeWindow_CheckedChanged;
             radioButton5Min.CheckedChanged += RadioButtonTimeWindow_CheckedChanged;
             radioButton60Min.CheckedChanged += RadioButtonTimeWindow_CheckedChanged;
-
-
-
-
-
-            //button8.Enabled = false;      /// Buttons used as indicators are disabled
-            //button10.Enabled = false;
-            //button11.Enabled = false;
-            button12.Enabled = false;
+                       
+           
+            button12.Enabled = false;                 /// Buttons used as indicators are disabled
             button13.Enabled = false;
             button14.Enabled = false;
 
-            //// calibration buttons and texboxes are diabled until start is pressed 
+                                                     /// calibration buttons and texboxes are diabled until start is pressed 
             textBox1.Enabled = false;
             textBox2.Enabled = false;
             button27.Enabled = false;
@@ -127,36 +115,6 @@ namespace Field_Mill
             }
         }
 
-        /* private void SaveResultToFile(float result)
-         {
-             try
-             {
-                 File.WriteAllText(filePath, result.ToString(CultureInfo.InvariantCulture));
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show("Error saving result: " + ex.Message);
-             }
-         }
-
-         private void LoadResultFromFile()
-         {
-             try
-             {
-                 if (File.Exists(filePath))
-                 {
-                     string savedResult = File.ReadAllText(filePath);
-                     if (float.TryParse(savedResult, NumberStyles.Float, CultureInfo.InvariantCulture, out float loaded))
-                     {
-                         label43.Text = loaded.ToString(CultureInfo.CurrentCulture);
-                     }
-                 }
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show("Error loading saved result: " + ex.Message);
-             }
-         }*/
 
 
         private double timeWindowMinutes = 15;
@@ -200,14 +158,6 @@ namespace Field_Mill
                 "Timestamp,Rotor_Hz,INSENSITVE_CH_GAIN,INSENSITIVE_FIELD_V/m,SENSITIVE_FIELD_V/m,INTERNAL_TEMP,STATUS,INSENSITVE_CH_ZERO,SENSITVE_CH_ZERO,COM_ERRORS,SENSITIVE_CH_GAIN,SENSITIVE_CH_OFFSET,INSENSITIVE_CH_OFFSET,SW_VER\n");
 
 
-            //string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-            //string logFolder = Path.Combine(Application.StartupPath, "Logs");
-            //Directory.CreateDirectory(logFolder);
-            //csvFilePath = Path.Combine(logFolder, $"log_{timestamp}.csv");
-
-            //File.AppendAllText(csvFilePath, "Timestamp,Rotor_Hz,INSENSITVE_CH_GAIN,INSENSITIVE_FIELD_V/m,SENSITIVE_FIELD_V/m,INTERNAL_TEMP,STATUS,INSENSITVE_CH_ZERO,SENSITVE_CH_ZERO,COM_ERRORS,SENSITIVE_CH_GAIN,SENSITIVE_CH_OFFSET,INSENSITIVE_CH_OFFSET,SW_VER\n");
-
-
             var ports = SerialPort.GetPortNames();
             comboBox1.DataSource = ports;
             SetupChart();
@@ -220,8 +170,7 @@ namespace Field_Mill
         {
             if (comboBox1.SelectedIndex > -1)
             {
-                //MessageBox.Show(String.Format("You selected port '{0}'", comboBox1.SelectedItem));
-                //Connect(comboBox1.SelectedItem.ToString());
+            
                 modbusClient = new ModbusClient(comboBox1.SelectedItem.ToString());
                 modbusClient.UnitIdentifier = 1;
                 modbusClient.Baudrate = 19200;
@@ -279,13 +228,6 @@ namespace Field_Mill
                 MessageBox.Show("Error while disconnecting: " + ex.Message);
             }
         }
-
-       
-        
-
-        
-
-       
 
     
         ///////////////////////////////////// SENSITIVE CH GAIN UPDATE////////////////////////////////////
@@ -574,32 +516,7 @@ namespace Field_Mill
             }
         }
 
-        /*private void button25_Click(object sender, EventArgs e)  //// store the value in a file
-        {
-            if (float.TryParse(label43.Text, NumberStyles.Float, CultureInfo.CurrentCulture, out float num1))
-            {
-                
-                string filePath = Path.Combine(Application.StartupPath, "calibration.txt");
-                File.WriteAllText(filePath, num1.ToString(CultureInfo.InvariantCulture));
-                
-                SaveResultToFile(num1);
-                textBox1.Enabled = false;
-                textBox2.Enabled = false;
-                button27.Enabled = false;
-                button28.Enabled = false;
-                button24.Enabled = false;
-                button25.Enabled = false;
-
-                MessageBox.Show("Calibration stored.");
-
-
-            }
-
-            else
-            {
-                MessageBox.Show("Invalid input. Please enter valid float numbers in both boxes.");
-            }
-        }*/
+       
 
         ////////////////////////////////////////  POLLING   ///////////////////////////////////////////////
         private void buttonStartPolling_Click(object sender, EventArgs e)  /// START
@@ -653,15 +570,11 @@ namespace Field_Mill
                     float rawValue3 = ConvertRegistersToFloat(r[3], r[4]);
                     float rawValue5 = ConvertRegistersToFloat(r[5], r[6]);
 
-                    float calibratedValue3 = rawValue3 * calibrationFactor;
-                    float calibratedValue5 = rawValue5 * calibrationFactor;
+                    float calibratedValue3 = rawValue3 * calibrationFactor;         /// Float INSENSITVE FIELD V/m
+                    float calibratedValue5 = rawValue5 * calibrationFactor;         /// Float SENSITIVE FIELD V/m 
 
                     SetLabel(3, calibratedValue3.ToString("F2"));
                     SetLabel(5, calibratedValue5.ToString("F2"));
-
-
-                    //SetLabel(3, ConvertRegistersToFloat(r[3], r[4]).ToString("F2")); // Float
-                    //SetLabel(5, ConvertRegistersToFloat(r[5], r[6]).ToString("F2")); // Float
 
                     SetLabel(7, ConvertRegistersToLong(r[7], r[8]).ToString());      // Long  // INTERNAL TEMP  
 
@@ -745,14 +658,14 @@ namespace Field_Mill
                         button14.Text = "Yes";
                     }
 
-                    //SetLabel(9, Convert.ToString(r[9], 2).PadLeft(16, '0'));         // Binary
+                    
 
                     
-                    SetLabel(10, r[10].ToString()); // Int16
-                    SetLabel(11, r[11].ToString());
-                    SetLabel(12, r[12].ToString());
+                    SetLabel(10, r[10].ToString()); // Int16  INSENSITVE_CH_ZERO
+                    SetLabel(11, r[11].ToString()); // Int16  SENSITVE_CH_ZERO
+                    SetLabel(12, r[12].ToString()); // Int16  COM_ERRORS
 
-                    
+
                     SetLabel(13, ConvertRegistersToFloat(r[13], r[14]).ToString("F2", CultureInfo.GetCultureInfo("it-IT")));    /// SENS GAIN
                     SetLabel(15, ConvertRegistersToFloat(r[15], r[16]).ToString("F2", CultureInfo.GetCultureInfo("it-IT")));    /// SENS OFFSET
                     SetLabel(17, ConvertRegistersToFloat(r[17], r[18]).ToString("F2", CultureInfo.GetCultureInfo("it-IT")));    /// INSENS OFFSET
@@ -853,33 +766,10 @@ namespace Field_Mill
 
         private long ConvertRegistersToLong(int highWord, int lowWord)
         {
-            uint high = (uint)highWord;
-            uint low = (uint)lowWord;
+            uint high = (uint)lowWord;
+            uint low = (uint)highWord; 
             return ((long)high << 16) | low;
         }
-
-
-
-        
-
-      /*  private void SetLabel(int regIndex, string text)
-        {
-            Control[] controls = this.Controls.Find($"labelReg{regIndex}", true);
-
-            if (controls.Length > 0)
-            {
-                Control ctrl = controls[0];
-
-                if (ctrl is System.Windows.Forms.Label label)
-                {
-                    label.Text = text;
-                }
-                else if (ctrl is System.Windows.Forms.TextBox textBox)
-                {
-                    textBox.Text = text;
-                }
-            }
-        } */
 
 
         private void SetLabel(int regIndex, string text)  /// Without register names
@@ -891,16 +781,6 @@ namespace Field_Mill
             }
         }
 
-        
-
-        /* private void SetLabel(int regIndex, string text)   /// With register names
-         {
-             System.Windows.Forms.Label label = this.Controls.Find($"labelReg{regIndex}", true).FirstOrDefault() as System.Windows.Forms.Label;
-             if (label != null)
-             {
-                 label.Text = $"R{regIndex}: {text}";
-             }
-         }*/
 
         private void ShowConnectionErrorInLabels(string message)
         {
