@@ -17,7 +17,7 @@ With RS485 module TX and RX are swapped on bluepill side
 
 Commands:  
 
-cd C:\Users\..\Documents\Field_Mill\Modbus_DRIVER  
+cd C:\Users\...\Documents\Field_Mill\Modbus_DRIVER  
 
 READING  
 
