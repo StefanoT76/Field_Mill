@@ -1,5 +1,5 @@
-Author: StefanoT  
-Email: {AuthorEmail}  
+Author: StefanoT76  
+
 Date: 26/03/2024  
 Revision: SW 0.9.6  HW V0.2 (new motor)  
 
@@ -17,7 +17,7 @@ With RS485 module TX and RX are swapped on bluepill side
 
 Commands:  
 
-cd C:\Users\stefano.trentini\Documents\Field_Mill\Modbus_DRIVER  
+cd C:\Users\..\Documents\Field_Mill\Modbus_DRIVER  
 
 READING  
 
